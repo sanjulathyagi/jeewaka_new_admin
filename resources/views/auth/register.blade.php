@@ -1,7 +1,8 @@
 @extends('layouts.guest')
 @section('content')
 <main class="main-content  mt-0">
-    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg'); background-position: top;">
+    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg"
+    style="background-image: url('{{ asset('public\assets\img\depositphotos_110608062-stock-photo-natural-organic-spa-products.jpg')}}'); background-position: top;">
       <span class="mask bg-gradient-dark opacity-6"></span>
       <div class="container">
         <div class="row justify-content-center">
@@ -91,9 +92,9 @@
                   </label>
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
+                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
                 </div>
-                <p class="text-sm mt-3 mb-0">Already have an account? <a href="javascript:;" class="text-dark font-weight-bolder">Sign in</a></p>
+                <p class="text-sm mt-3 mb-0">Already have an account? <a href="{{ route('login') }}" class="text-dark font-weight-bolder">Sign in</a></p>
               </form>
             </div>
           </div>
