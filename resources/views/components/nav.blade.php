@@ -22,9 +22,17 @@
                 </a>
               </li>
               <li class="mb-2">
-                <a class="dropdown-item border-radius-md" href="javascript:;">
+                {{-- <form action ="{{ route('logout') }}" method="post">
+                @csrf
+                <button class="dropdown-item border-radius-md" type="submit">
+                    logout --}}
+                {{-- <a class="dropdown-item border-radius-md" href="{{ route('logout') }}">
                   Log out
-                </a>
+                </a> --}}
+
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#logout-Modal">
+                    Logout
+                  </button>
               </li>
             </ul>
           </li>
