@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class homeController extends parentController
+class HomeController extends parentController
 {
     public function index()
     {
