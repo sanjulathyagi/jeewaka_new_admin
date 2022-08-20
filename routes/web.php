@@ -30,5 +30,12 @@ use App\Http\Controllers\HomeController;
 // Home
 Route::get('/', [HomeController::class,"index"])->name('dashboard');
 
-
-Route::get('/categories;', [HomeController::class,"index"])->name('home');
+//categories
+Route::prefix('categories')->group(function () {
+    Route::get('/categories', [HomeController::class,"index"])->name('categories.all');
+    Route::get('/categories/new', [HomeController::class,"new"])->name('categories.new');
+    Route::post('/categories/store', [HomeController::class,"store"])->name('categories.store');
+    Route::get('/categories/{category_id}/edit', [HomeController::class,"edit"])->name('categories.edit');
+    Route::post('/categories/{category_id}/update', [HomeController::class,"update"])->name('categories.update');
+    Route::get('/categories/{category_id}/delete', [HomeController::class,"delete"])->name('categories.delete');
+});
