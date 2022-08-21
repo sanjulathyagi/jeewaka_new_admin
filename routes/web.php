@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,10 +35,20 @@ Route::get('/', [HomeController::class,"index"])->name('dashboard');
 
 //categories
 Route::prefix('categories')->group(function () {
-    Route::get('/categories', [HomeController::class,"index"])->name('categories.all');
-    Route::get('/categories/new', [HomeController::class,"new"])->name('categories.new');
-    Route::post('/categories/store', [HomeController::class,"store"])->name('categories.store');
-    Route::get('/categories/{category_id}/edit', [HomeController::class,"edit"])->name('categories.edit');
-    Route::post('/categories/{category_id}/update', [HomeController::class,"update"])->name('categories.update');
-    Route::get('/categories/{category_id}/delete', [HomeController::class,"delete"])->name('categories.delete');
+    Route::get('/', [CategoryController::class,"index"])->name('categories.all');
+    Route::get('/new', [CategoryController::class,"new"])->name('categories.new');
+    Route::post('/store', [CategoryController::class,"store"])->name('categories.store');
+    Route::get('/{category_id}/edit', [CategoryController::class,"edit"])->name('categories.edit');
+    Route::post('/{category_id}/update', [CategoryController::class,"update"])->name('categories.update');
+    Route::get('/{category_id}/delete', [CategoryController::class,"delete"])->name('categories.delete');
+});
+
+//products
+Route::prefix('categories')->group(function () {
+    Route::get('/', [ProductController::class,"index"])->name('products.all');
+    Route::get('/new', [ProductController::class,"new"])->name('products.new');
+    Route::post('/store', [ProductController::class,"store"])->name('products.store');
+    Route::get('/{product_id}/edit', [ProductController::class,"edit"])->name('products.edit');
+    Route::post('/{product_id}/update', [ProductController::class,"update"])->name('products.update');
+    Route::get('/{product_id}/delete', [ProductController::class,"delete"])->name('products.delete');
 });
