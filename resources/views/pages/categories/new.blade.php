@@ -25,10 +25,22 @@
     <div class="container-fluid mt-3 mt-5">
         <div class="col-md-12">
             <div class="card">
-
-
+                <div class="card-header">Categories</div>
+                <div class="card-body">
+                    <form action="{{ route('categories.store') }}" method="post">
+                        @csrf
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <label>Name</label>
+                                <input class="form-control" name="name" type="text" placeholder="eg:Hair-Care">
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary">Create</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-
         </div>
     </div>
 @endsection
