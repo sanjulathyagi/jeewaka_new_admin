@@ -26,7 +26,7 @@
             <div class="card">
                 <div class="card-header">Categories</div>
                 <div class="card-body">
-                    <table class="table-striped">
+                    <table class="table-striped table-responsive table">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -37,8 +37,9 @@
                         <tbody>
                             @foreach ($categories as $category)
                                 <tr>
-                                    <td>{{ $categories->name }}/td>
-                                    <td>{{ $categories->introduction }}</td>
+                                    <td>{{ $category->name }}</td>
+                                    <td>{{ $category->introduction }}</td>
+                                    <td></td>
                                 </tr>
                             @endforeach
                         </tbody>

@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="{{ route('dashboard') }}">
+          <a class="nav-link {{ $curr_url=='dashboard'?'active':'' }}" href="{{ route('dashboard') }}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="fas fa-desktop"></i>
             </div>
@@ -18,11 +18,11 @@
           </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="">
+            <a class="nav-link {{ in_array($curr_url,['items.new','items.all','items.edit','view.items','items.upload.image.status'])?'active':'' }}" href="{{ route('categories.all') }}">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="fa-solid fa-layer-group text-sucess text-sm opacity-10"></i>
               </div>
-              <span class="nav-link-text ms-1">Categories</span>
+              <span class="nav-link-text ms-1">Category Management</span>
             </a>
           </li>
           <li class="nav-item">
@@ -30,7 +30,7 @@
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="fab fa-pagelines"></i>
               </div>
-              <span class="nav-link-text ms-1">Products</span>
+              <span class="nav-link-text ms-1">Product Management</span>
             </a>
           </li>
       </ul>

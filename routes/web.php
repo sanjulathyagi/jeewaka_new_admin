@@ -45,7 +45,7 @@ Route::prefix('categories')->group(function () {
 });
 
 //products
-Route::prefix('categories')->group(function () {
+Route::prefix('products')->group(function () {
     Route::get('/', [ProductController::class,"index"])->name('products.all');
     Route::get('/new', [ProductController::class,"new"])->name('products.new');
     Route::post('/store', [ProductController::class,"store"])->name('products.store');
@@ -55,10 +55,10 @@ Route::prefix('categories')->group(function () {
 });
 
 //banner
-Route::prefix('/banner',)->group(function () {
-    Route::get('/', [BannerController::class, "index"])->name('banner.all');
-    Route::post('/store', [BannerController::class, "store"])->name('banner.store');
-    Route::get('/{banner_id}/delete', [BannerController::class, "delete"])->name('banner.delete');
-    Route::get('/{banner_id}/status', [BannerController::class, "status"])->name('banner.status');
+Route::prefix('/banners',)->group(function () {
+    Route::get('/', [BannerController::class, "index"])->name('banners.all');
+    Route::post('/store', [BannerController::class, "store"])->name('banners.store');
+    Route::get('/{banner_id}/delete', [BannerController::class, "delete"])->name('banners.delete');
+    Route::get('/{banner_id}/status', [BannerController::class, "status"])->name('banners.status');
 
 });

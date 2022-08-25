@@ -13,7 +13,7 @@
                        <ul class="dropdown-menu login-dropdown dropdown-menu-end  px-2 py-3 me-sm-n4"
                            aria-labelledby="dropdownMenuButton">
                            <li class="mb-2">
-                               <a class="dropdown-item border-radius-md" href="javascript:;">
+                               <a class="dropdown-item border-radius-md" href="{{ route('profile.show') }}">
                                    Profile
                                </a>
                            </li>
