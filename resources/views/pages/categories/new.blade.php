@@ -22,23 +22,24 @@
     </div>
 @endsection
 @section('content')
-    <div class="container-fluid mt-3 mt-5">
-        <div class="col-md-12">
+    <div class="container-fluid mt-5 justify-content-center">
+        <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Categories</div>
                 <div class="card-body">
-                    <form action="{{ route('categories.store') }}" method="post">
-                        @csrf
-                        <div class="row mt-3">
-                            <div class="col-md-12">
-                                <label>Name</label>
-                                <input class="form-control" name="name" type="text" placeholder="eg:Hair-Care">
-                            </div>
-                            <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary">Create</button>
-                            </div>
+                    <h5 class="font-weight-bolder">category Information</h5>
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <label>Name</label>
+                            <input class="form-control" type="text" value="Minimal Bar Stool" onfocus="focused(this)"
+                                onfocusout="defocused(this)">
                         </div>
-                    </form>
+                        {{-- <div class="col-12 col-sm-6 mt-3 mt-sm-0">
+                            <label>Weight</label>
+                            <input class="form-control" type="number" value="2" onfocus="focused(this)"
+                                onfocusout="defocused(this)">
+                        </div> --}}
+
+                    </div>
                 </div>
             </div>
         </div>

@@ -11,6 +11,9 @@
     </title>
 
     @include('libraries.styles')
+    @php
+    $curr_url = Route::currentRouteName();
+    @endphp
 
 </head>
 
