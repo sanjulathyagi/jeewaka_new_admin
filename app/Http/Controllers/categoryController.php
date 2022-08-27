@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use domain\facades\categoryFacade;
 use Illuminate\Http\Request;
 
 class CategoryController extends ParentController
