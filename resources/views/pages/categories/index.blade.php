@@ -26,7 +26,7 @@
             <div class="card">
                 <div class="card-header">Categories</div>
                 <div class="card-body">
-                    <table class="table-striped table-responsive table">
+                    <table class="table-striped table-responsive table " id="category_table">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -49,3 +49,11 @@
         </div>
     </div>
 @endsection
+
+
+@push('scripts')
+$(document).ready( function () {
+    $('#category_table').DataTable();
+} );
+
+@endpush
