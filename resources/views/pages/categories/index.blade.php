@@ -31,7 +31,7 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Image</th>
-                                <th>Action</th>
+                                <th style="width: 10%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,7 +39,12 @@
                                 <tr>
                                     <td>{{ $category->name }}</td>
                                     <td>{!! $category->introduction !!}</td>
-                                    <td></td>
+                                    <td>
+                                        <a href="{{ route('categories.edit', $category->id) }}"
+                                            class="btn btn-outline-primary btn-sm ">Edit</a>
+                                            <a href="{{ route('categories.edit', $category->id) }}"
+                                                class="btn btn-outline-danger btn-sm ">Delete</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
