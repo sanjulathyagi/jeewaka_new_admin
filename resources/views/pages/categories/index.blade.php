@@ -38,7 +38,7 @@
                             @foreach ($categories as $category)
                                 <tr>
                                     <td>{{ $category->name }}</td>
-                                    <td>{{ $category->introduction }}</td>
+                                    <td>{!! $category->introduction !!}</td>
                                     <td></td>
                                 </tr>
                             @endforeach

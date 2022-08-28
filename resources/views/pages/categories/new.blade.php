@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-12 col-sm-6 mt-3 mt-sm-0">
                             <label>Introduction</label>
-                            <textarea name="description" class="form-control" id="description" cols="30" rows="10">
+                            <textarea name="description" class="form-control" id="inp_description" cols="30" rows="10">
                             </textarea>
                         </div>
                         <div class="col-md-12 mt-3">
@@ -49,3 +49,16 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#inp_description'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+@endpush
