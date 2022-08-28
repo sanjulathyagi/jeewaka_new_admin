@@ -110,5 +110,8 @@
 
  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/dataTables.bootstrap4.min.js" integrity="sha512-OQlawZneA7zzfI6B1n1tjUuo3C5mtYuAWpQdg+iI9mkDoo7iFzTqnQHf+K5ThOWNJ9AbXL4+ZDwH7ykySPQc+A=="
+ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
  @stack('scripts')

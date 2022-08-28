@@ -53,7 +53,16 @@
 
 @push('scripts')
 $(document).ready( function () {
-    $('#category_table').DataTable();
+    $('#category_table').DataTable({
+        "language": {
+            "emptyTable": "No data available in the table",
+            "paginate": {
+                "previous": '<i class="fa-solid fa-angles-left"></i>',
+                "next": '<i class="fa-solid fa-angles-right"></i>'
+            },
+            "sEmptyTable": "No data available in the table"
+        },
+    });
 } );
 
 @endpush

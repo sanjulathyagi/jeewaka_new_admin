@@ -33,11 +33,15 @@
                             <input class="form-control" type="text" value="Minimal Bar Stool" onfocus="focused(this)"
                                 onfocusout="defocused(this)">
                         </div>
-                        {{-- <div class="col-12 col-sm-6 mt-3 mt-sm-0">
-                            <label>Weight</label>
-                            <input class="form-control" type="number" value="2" onfocus="focused(this)"
-                                onfocusout="defocused(this)">
-                        </div> --}}
+                        <div class="col-12 col-sm-6 mt-3 mt-sm-0">
+                            <label>Introduction</label>
+                            <textarea name="description" class="form-control" id="description" cols="30" rows="10">
+                            </textarea>
+                        </div>
+                        <div class="col-md-12 mt-3">
+                            <button type="submit" class="btn btn-primary">Create</button>
+
+                        </div>
 
                     </div>
                 </div>
