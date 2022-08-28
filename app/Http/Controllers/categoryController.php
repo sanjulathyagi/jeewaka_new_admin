@@ -26,4 +26,23 @@ class CategoryController extends ParentController
 
     }
 
+    public function edit($category_id)
+    {
+        categoryFacade::find($category_id);
+        return redirect()->route('categories.all');
+    }
+
+    public function delete($category_id)
+    {
+        categoryFacade::find($category_id);
+        $category_id->delete();
+        return redirect()->back();
+    }
+
+    public function update(Request $request, $category_id)
+    {
+        categoryFacade::find($category_id)->update($request->all());
+        return redirect()->route('categories.all');
+    }
+
 }
