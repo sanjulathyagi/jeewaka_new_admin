@@ -1,27 +1,48 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace domain\Services\CategoryService;
+
 use App\Models\Category;
 
-use Illuminate\Http\Request;
-
-class CategoryController extends ParentController
+class CategoryService
 {
+
+    protected $category;
+
+    public function __construct()
+    {
+        $this->category = new Category();
+    }
 
     public function all()
     {
-        return view('pages.categories.index');
+        return $this->category->all();
     }
 
-    public function new()
+    public function get($category_id)
     {
-        return view('pages.categories.new');
+        return $this->category->find($category_id);
     }
 
-    public function store(Request $request)
+    public function store($data)
     {
-        Category::create($request->all());
-        return redirect()->route('categories.all');
+        return $this->category->create($data);
 
     }
+
+    public function delete($category_id)
+    {
+        $category = $this->category->find($category_id);
+        $category->delete();
+        return $category;
+    }
+
+    public function update($data, $category_id)
+    {
+        $category = $this->category->find($category_id);
+        $category->update($data);
+        return $category;
+
+    }
+
 }

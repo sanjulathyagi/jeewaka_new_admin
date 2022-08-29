@@ -1,13 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
-use App\Models\product;
-use Illuminate\Http\Request;
+namespace domain\Services\ProductService;
 
-class ProductController extends ParentController
+class ProductService
 {
-    public function index()
-    {
-        return view('pages.products.index');
-    }
+    
 }

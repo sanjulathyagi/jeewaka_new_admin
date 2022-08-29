@@ -2,46 +2,45 @@
 
 namespace App\Http\Controllers;
 
-use domain\facades\categoryFacade;
+use domain\Facades\CategoryFacade;
+
 use Illuminate\Http\Request;
 
 class CategoryController extends ParentController
 {
     public function index()
     {
-        $response['categories'] =categoryFacade::all();
+        $response['categories'] =CategoryFacade::all();
         return view('pages.categories.index')->with($response);
     }
 
     public function new()
     {
-        $response['categories'] = categoryFacade::all();
-        return view('pages.categories.new')->with($response);
+        return view('pages.categories.new');
     }
 
     public function store(Request $request)
     {
-        categoryFacade::store($request->all());
+        CategoryFacade::store($request->all());
         return redirect()->route('categories.all');
 
     }
 
     public function edit($category_id)
     {
-        categoryFacade::find($category_id);
-        return redirect()->route('categories.all');
+        $response['category'] = CategoryFacade::get($category_id);
+        return view('pages.categories.edit')->with($response);
     }
 
     public function delete($category_id)
     {
-        categoryFacade::find($category_id);
-        $category_id->delete();
+        CategoryFacade::delete($category_id);
         return redirect()->back();
     }
 
     public function update(Request $request, $category_id)
     {
-        categoryFacade::find($category_id)->update($request->all());
+        CategoryFacade::update($request->all(), $category_id);
         return redirect()->route('categories.all');
     }
 

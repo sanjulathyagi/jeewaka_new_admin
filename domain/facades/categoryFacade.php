@@ -1,13 +1,11 @@
 <?php
-namespace domain\facades;
-use domain\services\categoryService;
 
-use Illuminate\Support\facades\Facade;
+namespace domain\Facades\CategoryFacade;
 
-class categoryFacade extends facade
+use Illuminate\Support\Facades\Facade;
+
+class CategoryFacade extends Facade
 {
-    protected static function getFacadeAccessor()
-    {
-        return categoryService::class;
-    }
+
 }
+
