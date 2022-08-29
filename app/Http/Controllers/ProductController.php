@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use domain\Facades\ProductFacade;
 
+use domain\Facades\ProductFacade;
 use Illuminate\Http\Request;
 
 class ProductController extends ParentController

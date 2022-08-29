@@ -57,6 +57,7 @@
 
 
 @push('scripts')
+<script>
 $(document).ready( function () {
     $('#category_table').DataTable({
         "language": {
@@ -69,5 +70,5 @@ $(document).ready( function () {
         },
     });
 } );
-
+</script>
 @endpush

@@ -1,8 +1,8 @@
 <?php
 
-namespace domain\Facades\CategoryFacade;
+namespace domain\Facades;
 
-use domain\Services\CategoryService\CategoryService;
+use domain\Services\CategoryService;
 use Illuminate\Support\Facades\Facade;
 
 class CategoryFacade extends Facade
