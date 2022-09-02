@@ -13,4 +13,11 @@ class category extends Model
         'introduction',
         'image_id',
     ];
+
+    public function images()
+    {
+        return $this->hasOne(Image::class,'id', 'image_id');
+
+    }
+
 }

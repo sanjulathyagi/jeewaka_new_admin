@@ -4,7 +4,6 @@ use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\BannerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,11 +53,3 @@ Route::prefix('products')->group(function () {
     Route::get('/{product_id}/delete', [ProductController::class,"delete"])->name('products.delete');
 });
 
-//banner
-Route::prefix('/banners',)->group(function () {
-    Route::get('/', [BannerController::class, "index"])->name('banners.all');
-    Route::post('/store', [BannerController::class, "store"])->name('banners.store');
-    Route::get('/{banner_id}/delete', [BannerController::class, "delete"])->name('banners.delete');
-    Route::get('/{banner_id}/status', [BannerController::class, "status"])->name('banners.status');
-
-});

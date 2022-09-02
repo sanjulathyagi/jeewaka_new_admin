@@ -38,7 +38,10 @@
                             @foreach ($categories as $category)
                                 <tr>
                                     <td>{{ $category->name }}</td>
-                                    <td>{!! $category->introduction !!}</td>
+                                    <td>
+                                        <img src="{{ config('image.access_path') }}/{{ $category->images?$category->images->name:'' }}"
+                                        class="img-fluid" width="100">
+                                    </td>
                                     <td>
                                         <a href="{{ route('categories.edit', $category->id) }}"
                                             class="btn btn-outline-primary btn-sm ">Edit</a>

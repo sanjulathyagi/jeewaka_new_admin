@@ -15,7 +15,7 @@ class Images
 
     public function __construct()
     {
-        $this->image_path = public_path(Config::get('images.upload_path'));
+        $this->image_path = public_path(Config::get('image.upload_path'));
     }
 
     /**
@@ -42,7 +42,7 @@ class Images
 
     public function getThumbSize($size_type)
     {
-        return Config::get('images.' . $size_type);
+        return Config::get('image.' . $size_type);
     }
 
     /**
@@ -50,34 +50,34 @@ class Images
      */
     public function saveThumb($file, $size_type)
     {
-        $manager = new ImageManager(array('driver' => Config::get('images.driver')));
+        $manager = new ImageManager(array('driver' => Config::get('image.driver')));
         $image = $manager->make($this->image_path . '/' . $file);
         $size = $this->getThumbSize($size_type);
 
         /**
          * resize image with maintaining aspect ratio
          */
-        if ($image->getWidth() > $image->getHeight()) {
-            $image->resize(null, $size['height'], function ($image) {
-                $image->aspectRatio();
-            });
-            $image->crop($size['width'], $size['height'], intval(($image->getWidth() - $size['width']) / 2), 0);
-        } else {
-            $image->resize($size['width'], null, function ($image) {
-                $image->aspectRatio();
-            });
-            $image->crop($size['width'], $size['height'], 0, intval(($image->getHeight() - $size['height']) / 2));
-        }
+    //     if ($image->getWidth() > $image->getHeight()) {
+    //         $image->resize(null, $size['height'], function ($image) {
+    //             $image->aspectRatio();
+    //         });
+    //         $image->crop($size['width'], $size['height'], intval(($image->getWidth() - $size['width']) / 2), 0);
+    //     } else {
+    //         $image->resize($size['width'], null, function ($image) {
+    //             $image->aspectRatio();
+    //         });
+    //         $image->crop($size['width'], $size['height'], 0, intval(($image->getHeight() - $size['height']) / 2));
+    //     }
 
-        if (!file_exists($this->image_path . '/thumb')) {
-            File::makeDirectory($this->image_path . '/thumb');
-        }
+    //     if (!file_exists($this->image_path . '/thumb')) {
+    //         File::makeDirectory($this->image_path . '/thumb');
+    //     }
 
-        if (!file_exists($this->image_path . '/thumb/' . $size['width'] . 'x' . $size['height'])) {
-            File::makeDirectory($this->image_path . '/thumb/' . $size['width'] . 'x' . $size['height']);
-        }
+    //     if (!file_exists($this->image_path . '/thumb/' . $size['width'] . 'x' . $size['height'])) {
+    //         File::makeDirectory($this->image_path . '/thumb/' . $size['width'] . 'x' . $size['height']);
+    //     }
 
-        $image->save($this->image_path . '/thumb/' . $size['width'] . 'x' . $size['height'] . '/' . $file);
+        $image->save($this->image_path. '/' . $file);
     }
 
     /**
@@ -176,7 +176,7 @@ class Images
     public function crop($id, array $image_details, array $image_sizes)
     {
         $file_name = Image::find($id)->name;
-        $manager = new ImageManager(array('driver' => Config::get('images.driver')));
+        $manager = new ImageManager(array('driver' => Config::get('image.driver')));
         $image = $manager->make($this->image_path . '/' . $file_name);
         $image->crop(
             intval($image_details['width']),
@@ -196,10 +196,6 @@ class Images
      */
     public function makeObject($new_image_name)
     {
-        $image_service = new Image();
-
-        $image = $image_service::create(['name' => $new_image_name]);
-
-        return $image;
+        return Image::create(['name' => $new_image_name]);
     }
 }

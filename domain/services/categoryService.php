@@ -3,6 +3,7 @@
 namespace domain\Services;
 
 use App\Models\Category;
+use infrastructure\Facades\ImageFacade\ImageFacade;
 
 class CategoryService
 {
@@ -26,6 +27,10 @@ class CategoryService
 
     public function store($data)
     {
+        if(isset($data['images'])){
+            $image = ImageFacade::store($data['images'], [1,2,3,4,5]);
+            $data['image_id'] = $image['created_images']->id;
+        }
         return $this->category->create($data);
 
     }
