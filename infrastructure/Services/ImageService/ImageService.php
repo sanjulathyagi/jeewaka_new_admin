@@ -1,5 +1,5 @@
 <?php
-namespace Infrastructure;
+namespace Infrastructure\Services\ImageService;
 
 use App\Models\Image;
 use App\User;

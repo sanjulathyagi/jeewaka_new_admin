@@ -39,14 +39,20 @@
                                 <tr>
                                     <td>{{ $category->name }}</td>
                                     <td>
-                                        <img src="{{ config('image.access_path') }}/{{ $category->images?$category->images->name:'' }}"
-                                        class="img-fluid" width="100">
+                                        @if ($category->images)
+                                            <img src="{{ config('image.access_path') }}/{{ $category->images ? $category->images->name : '' }}"
+                                                class="img-fluid" width="100px">
+                                        @else
+                                            <img src="{{ asset('img/no-image-png-2.png') }}" class="img-fluid"
+                                                width="100px">
+                                        @endif
+
                                     </td>
                                     <td>
                                         <a href="{{ route('categories.edit', $category->id) }}"
                                             class="btn btn-outline-primary btn-sm ">Edit</a>
-                                            <a href="{{ route('categories.edit', $category->id) }}"
-                                                class="btn btn-outline-danger btn-sm ">Delete</a>
+                                        <a href="{{ route('categories.edit', $category->id) }}"
+                                            class="btn btn-outline-danger btn-sm ">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -60,18 +66,18 @@
 
 
 @push('scripts')
-<script>
-$(document).ready( function () {
-    $('#category_table').DataTable({
-        "language": {
-            "emptyTable": "No data available in the table",
-            "paginate": {
-                "previous": '<i class="fa-solid fa-angles-left"></i>',
-                "next": '<i class="fa-solid fa-angles-right"></i>'
-            },
-            "sEmptyTable": "No data available in the table"
-        },
-    });
-} );
-</script>
+    <script>
+        $(document).ready(function() {
+            $('#category_table').DataTable({
+                "language": {
+                    "emptyTable": "No data available in the table",
+                    "paginate": {
+                        "previous": '<i class="fa-solid fa-angles-left"></i>',
+                        "next": '<i class="fa-solid fa-angles-right"></i>'
+                    },
+                    "sEmptyTable": "No data available in the table"
+                },
+            });
+        });
+    </script>
 @endpush

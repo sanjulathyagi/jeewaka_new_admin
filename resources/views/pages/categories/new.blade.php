@@ -31,7 +31,7 @@
                         <div class="row mt-3 ">
                             <div class="col-md-12">
                                 <label>Name</label>
-                                <input class="form-control" type="text" value="eg:haircare" onfocus="focused(this)"
+                                <input class="form-control" type="text" value="" onfocus="focused(this)"
                                     onfocusout="defocused(this)">
                             </div>
                             <div class="col-md-12">

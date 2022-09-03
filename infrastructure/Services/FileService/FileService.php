@@ -1,5 +1,5 @@
 <?php
-namespace infrastructure;
+namespace infrastructure\Services\FileService;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
@@ -11,7 +11,7 @@ class FileService
 
     public function __construct()
     {
-        $this->image_path = Config::get('images.upload_path');
+        $this->image_path = Config::get('image.upload_path');
     }
 
     /**
