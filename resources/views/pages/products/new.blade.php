@@ -32,23 +32,30 @@
                             <div class="col-md-12">
                                 <label>Name</label>
                                 <input class="form-control" type="text" value="" onfocus="focused(this)"
-                                    onfocusout="defocused(this)">
+                                    onfocusout="defocused(this)" placeholder="eg: Haircare" required>
                             </div>
                             <div class="col-md-12">
                                 <label>category</label>
-                                <select name="categories" id="category_id" class="form-control">
-                                    <option value="1">text1</option>
-                                    <option value="2">text2</option>
-                                    <option value="3">text3</option>
+                                <select name="category_id" id="category_id" class="form-control" required>
+                                    <option value="1">Select Category</option>
+                                    @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+
                                 </select>
                             </div>
                             <div class="col-md-12">
-                                <label>Image</label>
-                                <input class="form-control dropify" name="images" type="file"
-                                    accept="image/jpg, image/jpeg, image/png" required>
+                                <label>Price</label>
+                                <input class="form-control" name="price" type="number" step="0.01"
+                                     placeholder="product price" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label>Quantity</label>
+                                <input class="form-control" type="number" name="quantity"
+                                    placeholder="available quantity" required>
                             </div>
                             <div class="col-12 col-sm-6 mt-3 mt-sm-0">
-                                <label>Introduction</label>
+                                <label>Description</label>
                                 <textarea name="description" class="form-control" id="inp_description" cols="30" rows="10">
                             </textarea>
                             </div>
