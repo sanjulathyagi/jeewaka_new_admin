@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use domain\Facades\CategoryFacade;
 use domain\Facades\ProductFacade;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class ProductController extends ParentController
 
     public function new()
     {
-        return view('pages.products.new');
+        $response['categories'] = CategoryFacade::all();
+        return view('pages.products.new')->with($response);
     }
 
     public function store(Request $request)
