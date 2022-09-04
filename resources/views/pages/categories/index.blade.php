@@ -44,7 +44,7 @@
                                                 class="img-fluid" width="100px">
                                         @else
                                             <img src="{{ asset('img/no-image-png-2.png') }}" class="img-fluid"
-                                                width="100px">
+                                                 max-height="75px">
                                         @endif
 
                                     </td>
@@ -54,7 +54,7 @@
                                             <i class="fa-solid fa-pen-to-square"></i></a>
                                         <a href="{{ route('categories.edit', $category->id) }}"
                                             class="btn btn-outline-danger btn-sm ">
-                                            <i class="fa-solid fa-trash"></i></a> 
+                                            <i class="fa-solid fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
