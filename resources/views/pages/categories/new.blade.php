@@ -37,7 +37,7 @@
                             <div class="col-md-12">
                                 <label>Image</label>
                                 <input class="form-control dropify" name="images" type="file"
-                                accept="image/jpg, image/jpeg, image/png" required>
+                                    accept="image/jpg, image/jpeg, image/png" required>
                             </div>
                             <div class="col-12 col-sm-6 mt-3 mt-sm-0">
                                 <label>Introduction</label>
@@ -58,6 +58,8 @@
 
 @push('scripts')
     <script>
+        $('.dropify').dropify();
+
         ClassicEditor
             .create(document.querySelector('#inp_description'))
             .then(editor => {

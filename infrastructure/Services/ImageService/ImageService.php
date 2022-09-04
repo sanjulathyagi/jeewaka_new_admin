@@ -5,7 +5,7 @@ use App\Models\Image;
 use App\User;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
-use infrastructure\Facades\FileFacade;
+use infrastructure\Facades\FileFacade\FileFacade;
 use Intervention\Image\ImageManager;
 
 class Images

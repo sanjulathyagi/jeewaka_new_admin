@@ -50,9 +50,11 @@
                                     </td>
                                     <td>
                                         <a href="{{ route('categories.edit', $category->id) }}"
-                                            class="btn btn-outline-primary btn-sm ">Edit</a>
+                                            class="btn btn-outline-primary btn-sm ">
+                                            <i class="fa-solid fa-pen-to-square"></i></a>
                                         <a href="{{ route('categories.edit', $category->id) }}"
-                                            class="btn btn-outline-danger btn-sm ">Delete</a>
+                                            class="btn btn-outline-danger btn-sm ">
+                                            <i class="fa-solid fa-trash"></i></a> 
                                     </td>
                                 </tr>
                             @endforeach
