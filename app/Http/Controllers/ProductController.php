@@ -22,14 +22,15 @@ class ProductController extends ParentController
 
     public function store(Request $request)
     {
-        ProductFacade::store($request->all());
-        return redirect()->route('products.all');
+        $product = ProductFacade::store($request->all());
+        return redirect()->route('products.edit', $product->id);
 
     }
 
     public function edit($product_id)
     {
         $response['products'] = ProductFacade::get($product_id);
+        $response['categories'] = CategoryFacade::all();
         return view('pages.products.edit')->with($response);
     }
 

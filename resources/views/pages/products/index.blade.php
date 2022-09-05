@@ -40,9 +40,9 @@
                                     <td>{{ $product->name }}</td>
                                     <td>{!! $product->introduction !!}</td>
                                     <td>
-                                        <a href="{{ route('products.edit', $category->id) }}"
+                                        <a href="{{ route('products.edit', $product->id) }}"
                                             class="btn btn-outline-primary btn-sm ">Edit</a>
-                                            <a href="{{ route('products.edit', $category->id) }}"
+                                            <a href="{{ route('products.edit', $product->id) }}"
                                                 class="btn btn-outline-danger btn-sm ">Delete</a>
                                     </td>
                                 </tr>
@@ -59,7 +59,7 @@
 @push('scripts')
 <script>
 $(document).ready( function () {
-    $('#category_table').DataTable({
+    $('#products_table').DataTable({
         "language": {
             "emptyTable": "No data available in the table",
             "paginate": {
