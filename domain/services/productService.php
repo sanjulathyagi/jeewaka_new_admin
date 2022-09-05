@@ -33,14 +33,19 @@ class ProductService
     {
         $Product = $this->Product->find($Product_id);
         $Product->delete();
-        return $Product;
+
     }
 
     public function update($data, $Product_id)
     {
         $Product = $this->Product->find($Product_id);
         $Product->update($data);
-        return $Product;
+    }
 
+    public function status($Product_id, $status)
+    {
+        $product = $this->Product->find($Product_id);
+        $product->is_active =$status;
+        $product->save();
     }
 }

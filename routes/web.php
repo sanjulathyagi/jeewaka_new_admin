@@ -51,5 +51,6 @@ Route::prefix('products')->group(function () {
     Route::get('/{product_id}/edit', [ProductController::class,"edit"])->name('products.edit');
     Route::post('/{product_id}/update', [ProductController::class,"update"])->name('products.update');
     Route::get('/{product_id}/delete', [ProductController::class,"delete"])->name('products.delete');
+    Route::get('/{product_id}/{status}/status', [ProductController::class,"status"])->name('products.status');
 });
 
