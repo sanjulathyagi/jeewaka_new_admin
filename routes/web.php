@@ -4,6 +4,8 @@ use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,4 +55,27 @@ Route::prefix('products')->group(function () {
     Route::get('/{product_id}/delete', [ProductController::class,"delete"])->name('products.delete');
     Route::get('/{product_id}/{status}/status', [ProductController::class,"status"])->name('products.status');
 });
+
+//customers
+Route::prefix('Customers')->group(function () {
+    Route::get('/', [CustomerController::class,"index"])->name('customers.all');
+    Route::get('/new', [CustomerController::class,"new"])->name('customers.new');
+    Route::post('/store', [CustomerController::class,"store"])->name('customers.store');
+    Route::get('/{customer_id}/edit', [CustomerController::class,"edit"])->name('customers.edit');
+    Route::post('/{customer_id}/update', [CustomerController::class,"update"])->name('customers.update');
+    Route::get('/{customer_id}/delete', [CustomerController::class,"delete"])->name('customers.delete');
+    Route::get('/{customer_id}/{status}/status', [CustomerController::class,"status"])->name('customers.status');
+});
+
+//orders
+Route::prefix('orders')->group(function () {
+    Route::get('/', [OrderController::class,"index"])->name('orders.all');
+    Route::get('/new', [OrderController::class,"new"])->name('orders.new');
+    Route::post('/store', [OrderController::class,"store"])->name('orders.store');
+    Route::get('/{order_id}/edit', [OrderController::class,"edit"])->name('orders.edit');
+    Route::post('/{order_id}/update', [OrderController::class,"update"])->name('orders.update');
+    Route::get('/{order_id}/delete', [OrderController::class,"delete"])->name('orders.delete');
+    Route::get('/{order_id}/{status}/status', [OrderController::class,"status"])->name('orders.status');
+});
+
 

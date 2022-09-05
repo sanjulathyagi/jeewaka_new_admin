@@ -1,5 +1,5 @@
 <?php
-namespace Infrastructure\Services\ImageService;
+namespace infrastructure\Services\ImageService;
 
 use App\Models\Image;
 use App\User;
@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\File;
 use infrastructure\Facades\FileFacade\FileFacade;
 use Intervention\Image\ImageManager;
 
-class Images
+class ImageService
 {
 
     protected $image_path;

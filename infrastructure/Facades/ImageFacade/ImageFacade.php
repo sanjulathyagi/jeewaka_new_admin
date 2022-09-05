@@ -4,7 +4,7 @@ namespace infrastructure\Facades\ImageFacade;
 
 
 use Illuminate\Support\Facades\Facade;
-use infrastructure\Services\ImageService;
+use infrastructure\Services\ImageService\ImageService;
 
 class ImageFacade extends Facade
  {

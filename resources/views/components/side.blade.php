@@ -33,6 +33,30 @@
               <span class="nav-link-text ms-1">Product Management</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{ in_array($curr_url,['products.all','products.new','products.edit'])?'active':'' }}" href="{{ route('products.all') }}">
+              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="fa fa-shopping-bag"></i>
+              </div>
+              <span class="nav-link-text ms-1">Order Management</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ in_array($curr_url,['products.all','products.new','products.edit'])?'active':'' }}" href="{{ route('products.all') }}">
+              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="fas fa-users"></i>
+              </div>
+              <span class="nav-link-text ms-1">customer Management</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ in_array($curr_url,['products.all','products.new','products.edit'])?'active':'' }}" href="{{ route('products.all') }}">
+              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="fas fa-envelope-open-text"></i>
+              </div>
+              <span class="nav-link-text ms-1">Request Management</span>
+            </a>
+          </li>
       </ul>
     </div>
   </aside>

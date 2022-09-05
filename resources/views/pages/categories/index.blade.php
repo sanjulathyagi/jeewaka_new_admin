@@ -41,10 +41,10 @@
                                     <td>
                                         @if ($category->images)
                                             <img src="{{ config('image.access_path') }}/{{ $category->images ? $category->images->name : '' }}"
-                                                class="img-fluid" width="100px">
+                                                 width="100px">
                                         @else
-                                            <img src="{{ asset('img/no-image-png-2.png') }}" class="img-fluid"
-                                                 max-height="75px">
+                                            <img src="{{ asset('assets/img/no-image-png-2.png') }}" 
+                                                 height="50px">
                                         @endif
 
                                     </td>

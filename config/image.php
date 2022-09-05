@@ -17,7 +17,7 @@ return [
 
     'driver' => 'gd',
     'upload_path' => env('IMAGE_UPLOAD_PATH', '/uploads'),
-    'access_path' => env('IMG_PATH', 'http://jk-admin.ast//uploads'),
+    'access_path' => env('IMG_PATH', 'http://jk-admin.ast/uploads'),
 
 
         1 => ['width' => 35, 'height' => 35],
