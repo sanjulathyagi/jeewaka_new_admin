@@ -34,7 +34,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ in_array($curr_url,['products.all','products.new','products.edit'])?'active':'' }}" href="{{ route('products.all') }}">
+            <a class="nav-link {{ in_array($curr_url,['orders.all','orders.new','orders.edit'])?'active':'' }}" href="{{ route('products.all') }}">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="fa fa-shopping-bag"></i>
               </div>
@@ -42,7 +42,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ in_array($curr_url,['products.all','products.new','products.edit'])?'active':'' }}" href="{{ route('products.all') }}">
+            <a class="nav-link {{ in_array($curr_url,['customer.all','customer.new','customer.edit'])?'active':'' }}" href="{{ route('products.all') }}">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="fas fa-users"></i>
               </div>
@@ -50,11 +50,27 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ in_array($curr_url,['products.all','products.new','products.edit'])?'active':'' }}" href="{{ route('products.all') }}">
+            <a class="nav-link {{ in_array($curr_url,['requests.all','requests.new','requests.edit'])?'active':'' }}" href="{{ route('products.all') }}">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="fas fa-envelope-open-text"></i>
               </div>
               <span class="nav-link-text ms-1">Request Management</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ in_array($curr_url,['profits.all','profits.new','profits.edit'])?'active':'' }}" href="{{ route('products.all') }}">
+              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="fa fa-money"></i>
+              </div>
+              <span class="nav-link-text ms-1">Profit Management</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ in_array($curr_url,['settingssettings.all','settings.new','settings.edit'])?'active':'' }}" href="{{ route('products.all') }}">
+              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="fa fa-cog"></i>
+              </div>
+              <span class="nav-link-text ms-1">Settings</span>
             </a>
           </li>
       </ul>
