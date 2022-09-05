@@ -2,14 +2,14 @@
 
 namespace domain\Facades;
 
-use domain\Services\CategoryService;
+use domain\Services\CustomerService;
 use Illuminate\Support\Facades\Facade;
 
-class CategoryFacade extends Facade
+class CustomerFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return CategoryService::class;
+        return CustomerService::class;
     }
 
 }
