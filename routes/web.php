@@ -5,7 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\SettingController;
+use App\Http\Controllers\RequestController;
+use App\Http\Controllers\ProfitController;
 use App\Http\Controllers\OrderController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -78,4 +83,35 @@ Route::prefix('orders')->group(function () {
     Route::get('/{order_id}/{status}/status', [OrderController::class,"status"])->name('orders.status');
 });
 
+//requests
+Route::prefix('requests')->group(function () {
+    Route::get('/', [RequestController::class,"index"])->name('requests.all');
+    Route::get('/new', [RequestController::class,"new"])->name('requests.new');
+    Route::post('/store', [RequestController::class,"store"])->name('requests.store');
+    Route::get('/{request_id}/edit', [RequestController::class,"edit"])->name('requests.edit');
+    Route::post('/{request_id}/update', [RequestController::class,"update"])->name('requests.update');
+    Route::get('/{request_id}/delete', [RequestController::class,"delete"])->name('requests.delete');
+    Route::get('/{request_id}//status', [RequestController::class,"status"])->name('requests.status');
+});
 
+//profits
+Route::prefix('profits')->group(function () {
+    Route::get('/', [ProfitController::class,"index"])->name('profits.all');
+    Route::get('/new', [ProfitController::class,"new"])->name('profits.new');
+    Route::post('/store', [ProfitController::class,"store"])->name('profits.store');
+    Route::get('/{profit_id}/edit', [ProfitController::class,"edit"])->name('profits.edit');
+    Route::post('/{profit_id}/update', [ProfitController::class,"update"])->name('profits.update');
+    Route::get('/{profit_id}/delete', [ProfitController::class,"delete"])->name('profits.delete');
+    Route::get('/{profit_id}//status', [ProfitController::class,"status"])->name('profits.status');
+});
+
+//settings
+Route::prefix('settings')->group(function () {
+    Route::get('/', [SettingController::class,"index"])->name('settings.all');
+    Route::get('/new', [SettingController::class,"new"])->name('settings.new');
+    Route::post('/store', [SettingController::class,"store"])->name('settings.store');
+    Route::get('/{setting_id}/edit', [SettingController::class,"edit"])->name('settings.edit');
+    Route::post('/{setting_id}/update', [SettingController::class,"update"])->name('settings.update');
+    Route::get('/{setting_id}/delete', [SettingController::class,"delete"])->name('settings.delete');
+    Route::get('/{setting_id}//status', [SettingController::class,"status"])->name('settings.status');
+});
