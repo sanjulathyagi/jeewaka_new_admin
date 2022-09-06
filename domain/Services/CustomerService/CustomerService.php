@@ -2,7 +2,7 @@
 
 namespace domain\Services\CustomerService;
 
-
+use App\Models\Customer;
 use infrastructure\Facades\ImageFacade\ImageFacade;
 
 class CustomerService

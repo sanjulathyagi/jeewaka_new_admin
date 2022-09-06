@@ -9,3 +9,4 @@ class Customer extends Model
 {
     use HasFactory;
 }
+

@@ -2,49 +2,50 @@
 
 namespace domain\Services\ProductService;
 
-use App\Models\product;
+use App\Models\Product;
 
 class ProductService
 {
-    protected $Product;
+    protected $product;
+
 
     public function __construct()
     {
-        $this->Product = new product();
+        $this->product = new Product();
     }
 
     public function all()
     {
-        return $this->Product->all();
+        return $this->product->all();
     }
 
-    public function get($Product_id)
+    public function get($product_id)
     {
-        return $this->Product->find($Product_id);
+        return $this->product->find($product_id);
     }
 
     public function store($data)
     {
-        return $this->Product->create($data);
+        return $this->product->create($data);
 
     }
 
-    public function delete($Product_id)
+    public function delete($product_id)
     {
-        $Product = $this->Product->find($Product_id);
-        $Product->delete();
+        $product = $this->product->find($product_id);
+        $product->delete();
 
     }
 
-    public function update($data, $Product_id)
+    public function update($data, $product_id)
     {
-        $Product = $this->Product->find($Product_id);
-        $Product->update($data);
+        $product = $this->product->find($product_id);
+        $product->update($data);
     }
 
-    public function status($Product_id, $status)
+    public function status($product_id, $status)
     {
-        $product = $this->Product->find($Product_id);
+        $product = $this->product->find($product_id);
         $product->is_active =$status;
         $product->save();
     }
