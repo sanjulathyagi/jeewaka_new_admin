@@ -2,7 +2,7 @@
 
 namespace domain\Facades;
 
-use domain\Services\CategoryService;
+use domain\Services\CategoryService\CategoryService;
 use Illuminate\Support\Facades\Facade;
 
 class CategoryFacade extends Facade

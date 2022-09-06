@@ -1,28 +1,28 @@
 <?php
 
-namespace domain\Services\CustomerService;
+namespace domain\Services\OrderService;
 
-use App\Models\Customer;
+use App\Models\Order;
 use infrastructure\Facades\ImageFacade\ImageFacade;
 
-class CustomerService
+class OrderService
 {
 
-    protected $category;
+    protected $order;
 
     public function __construct()
     {
-        $this->category = new Customer();
+        $this->order = new Order();
     }
 
     public function all()
     {
-        return $this->category->all();
+        return $this->order->all();
     }
 
-    public function get($category_id)
+    public function get($order_id)
     {
-        return $this->category->find($category_id);
+        return $this->order->find($order_id);
     }
 
     public function store($data)
@@ -31,22 +31,22 @@ class CustomerService
             $image = ImageFacade::store($data['images'], [1,2,3,4,5]);
             $data['image_id'] = $image['created_images']->id;
         }
-        return $this->category->create($data);
+        return $this->order->create($data);
 
     }
 
-    public function delete($category_id)
+    public function delete($order_id)
     {
-        $category = $this->category->find($category_id);
-        $category->delete();
-        return $category;
+        $order = $this->order->find($order_id);
+        $order->delete();
+        return $order;
     }
 
-    public function update($data, $category_id)
+    public function update($data, $order_id)
     {
-        $category = $this->category->find($category_id);
-        $category->update($data);
-        return $category;
+        $order = $this->order->find($order_id);
+        $order->update($data);
+        return $order;
 
     }
 

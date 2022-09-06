@@ -2,7 +2,7 @@
 
 namespace domain\Facades;
 
-use domain\Services\ProfitService;
+use domain\Services\ProfitService\ProfitService;
 use Illuminate\Support\Facades\Facade;
 
 class ProfitFacade extends Facade

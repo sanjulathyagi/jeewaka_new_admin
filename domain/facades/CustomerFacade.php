@@ -2,7 +2,7 @@
 
 namespace domain\Facades;
 
-use domain\Services\CustomerService;
+use domain\Services\CustomerService\CustomerService;
 use Illuminate\Support\Facades\Facade;
 
 class CustomerFacade extends Facade

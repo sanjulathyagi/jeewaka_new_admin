@@ -2,7 +2,7 @@
 
 namespace domain\Facades;
 
-use domain\Services\RequestService;
+use domain\Services\RequestService\RequestService;
 use Illuminate\Support\Facades\Facade;
 
 class RequestFacade extends Facade
