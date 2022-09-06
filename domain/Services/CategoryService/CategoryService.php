@@ -1,6 +1,6 @@
 <?php
 
-namespace domain\Services;
+namespace domain\Services\CategoryService;
 
 use App\Models\Category;
 use infrastructure\Facades\ImageFacade\ImageFacade;

@@ -2,45 +2,45 @@
 
 namespace App\Http\Controllers;
 
-use domain\Facades\OrderFacade;
+use domain\Facades\SettingFacade;
 use Illuminate\Http\Request;
 
 class OrderController extends ParentController
 {
     public function index()
     {
-        $response['orders'] =OrderFacade::all();
-        return view('pages.orders.index')->with($response);
+        $response['settings'] =SettingFacade::all();
+        return view('pages.settings.index')->with($response);
     }
 
     public function new()
     {
-        return view('pages.orders.new');
+        return view('pages.settings.new');
     }
 
     public function store(Request $request)
     {
-        OrderFacade::store($request->all());
-        return redirect()->route('orders.all');
+        SettingFacade::store($request->all());
+        return redirect()->route('settings.all');
 
     }
 
-    public function edit($order_id)
+    public function edit($setting_id)
     {
-        $response['orders'] = OrderFacade::get($order_id);
-        return view('pages.orders.edit')->with($response);
+        $response['settings'] = SettingFacade::get($setting_id);
+        return view('pages.settings.edit')->with($response);
     }
 
-    public function delete($order_id)
+    public function delete($setting_id)
     {
-        OrderFacade::delete($order_id);
+        SettingFacade::delete($setting_id);
         return redirect()->back();
     }
 
-    public function update(Request $request,$order_id)
+    public function update(Request $request,$setting_id)
     {
-        OrderFacade::update($request->all(), $order_id);
-        return redirect()->route('orders.all');
+        SettingFacade::update($request->all(), $setting_id);
+        return redirect()->route('settings.all');
     }
 
 }

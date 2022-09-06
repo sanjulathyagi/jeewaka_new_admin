@@ -1,6 +1,6 @@
 <?php
 
-namespace domain\Services;
+namespace domain\Services\ProductService;
 
 use App\Models\product;
 

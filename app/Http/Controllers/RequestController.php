@@ -2,45 +2,45 @@
 
 namespace App\Http\Controllers;
 
-use domain\Facades\OrderFacade;
+use domain\Facades\RequestFacade;
 use Illuminate\Http\Request;
 
-class OrderController extends ParentController
+class RequestController extends ParentController
 {
     public function index()
     {
-        $response['orders'] =OrderFacade::all();
-        return view('pages.orders.index')->with($response);
+        $response['requests'] =RequestFacade::all();
+        return view('pages.requests.index')->with($response);
     }
 
     public function new()
     {
-        return view('pages.orders.new');
+        return view('pages.requests.new');
     }
 
     public function store(Request $request)
     {
-        OrderFacade::store($request->all());
-        return redirect()->route('orders.all');
+        RequestFacade::store($request->all());
+        return redirect()->route('requests.all');
 
     }
 
-    public function edit($order_id)
+    public function edit($Request_id)
     {
-        $response['orders'] = OrderFacade::get($order_id);
-        return view('pages.orders.edit')->with($response);
+        $response['requests'] = RequestFacade::get($Request_id);
+        return view('pages.requests.edit')->with($response);
     }
 
-    public function delete($order_id)
+    public function delete($Request_id)
     {
-        OrderFacade::delete($order_id);
+        RequestFacade::delete($Request_id);
         return redirect()->back();
     }
 
-    public function update(Request $request,$order_id)
+    public function update(Request $request,$Request_id)
     {
-        OrderFacade::update($request->all(), $order_id);
-        return redirect()->route('orders.all');
+        RequestFacade::update($request->all(), $Request_id);
+        return redirect()->route('requests.all');
     }
 
 }
