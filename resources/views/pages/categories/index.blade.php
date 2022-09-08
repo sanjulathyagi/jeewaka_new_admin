@@ -16,7 +16,7 @@
         </div>
         <div class="col-lg-4 text-right d-flex flex-column justify-content-center">
             <a href="{{ route('categories.new') }}"
-                class="btn btn-outline-white mb-0 ms-lg-auto me-lg-0 me-auto mt-lg-0 mt-2">New</a>
+                class="btn btn-outline-white mb-0 ms-lg-auto me-lg-0 me-auto mt-lg-0 mt-2">Add New</a>
         </div>
     </div>
 @endsection
@@ -43,7 +43,7 @@
                                             <img src="{{ config('image.access_path') }}/{{ $category->images ? $category->images->name : '' }}"
                                                  width="100px">
                                         @else
-                                            <img src="{{ asset('assets/img/no-image-png-2.png') }}" 
+                                            <img src="{{ asset('assets/img/no-image-png-2.png') }}"
                                                  height="50px">
                                         @endif
 
