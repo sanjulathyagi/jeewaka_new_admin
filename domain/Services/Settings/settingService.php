@@ -3,16 +3,16 @@
 namespace domain\Services\Settings;
 
 use App\Models\Setting;
-use infrastructure\Facades\ImageFacade\ImageFacade;
+
 
 class SettingService
 {
 
-    protected $category;
+    protected $setting;
 
     public function __construct()
     {
-        $this->category = new Setting();
+        $this->setting = new Setting();
     }
 
 

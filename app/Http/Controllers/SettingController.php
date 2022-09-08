@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use domain\Facades\SettingFacade;
 use Illuminate\Http\Request;
 
-class OrderController extends ParentController
+class SettingController extends ParentController
 {
     public function index()
     {

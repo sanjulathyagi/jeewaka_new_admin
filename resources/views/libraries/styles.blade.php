@@ -34,4 +34,8 @@
     .breadcrumb-item {
         color: rgb(5, 71, 30);
     }
+
+    .icon_color{
+        color: rgb(14, 209, 56);
+    }
 </style>
