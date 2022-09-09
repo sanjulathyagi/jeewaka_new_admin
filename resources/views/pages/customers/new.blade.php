@@ -10,13 +10,13 @@
                         </a>
                     </li>
                     <li class="breadcrumb-item text-sm">
-                        <a class="opacity-5 text-white" href="{{ route('products.all') }}">
-                            products
+                        <a class="opacity-5 text-white" href="{{ route('customers.all') }}">
+                            customers
                         </a>
                     </li>
                     <li class="breadcrumb-item text-sm text-white active" aria-current="page">New</li>
                 </ol>
-                <h6 class="font-weight-bolder text-white mb-0">New products</h6>
+                <h6 class="font-weight-bolder text-white mb-0">New customers</h6>
             </nav>
         </div>
     </div>
@@ -26,7 +26,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('products.store') }}" method="POST">
+                    <form action="{{ route('customers.store') }}" method="POST">
                         @csrf
                         <div class="row mt-3 ">
                             <div class="col-md-12">

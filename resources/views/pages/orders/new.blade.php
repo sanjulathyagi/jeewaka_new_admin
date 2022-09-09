@@ -10,8 +10,8 @@
                         </a>
                     </li>
                     <li class="breadcrumb-item text-sm">
-                        <a class="opacity-5 text-white" href="{{ route('products.all') }}">
-                            products
+                        <a class="opacity-5 text-white" href="{{ route('orders.all') }}">
+                            orders
                         </a>
                     </li>
                     <li class="breadcrumb-item text-sm text-white active" aria-current="page">Add New</li>
@@ -26,7 +26,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('products.store') }}" method="POST">
+                    <form action="{{ route('orders.store') }}" method="POST">
                         @csrf
                         <div class="row mt-3 ">
                             <div class="col-md-12">
