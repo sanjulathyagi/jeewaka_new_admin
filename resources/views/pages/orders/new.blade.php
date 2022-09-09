@@ -14,9 +14,9 @@
                             products
                         </a>
                     </li>
-                    <li class="breadcrumb-item text-sm text-white active" aria-current="page">New</li>
+                    <li class="breadcrumb-item text-sm text-white active" aria-current="page">Add New</li>
                 </ol>
-                <h6 class="font-weight-bolder text-white mb-0">New products</h6>
+                <h6 class="font-weight-bolder text-white mb-0">New  orders</h6>
             </nav>
         </div>
     </div>

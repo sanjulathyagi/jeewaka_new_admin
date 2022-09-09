@@ -9,14 +9,14 @@
                             <i class="fa-solid fa-house"></i>
                         </a>
                     </li>
-                    <li class="breadcrumb-item text-sm text-white active" aria-current="page">Products</li>
+                    <li class="breadcrumb-item text-sm text-white active" aria-current="page">Orders</li>
                 </ol>
-                <h6 class="font-weight-bolder text-white mb-0"> All products</h6>
+                <h6 class="font-weight-bolder text-white mb-0"> All Orders</h6>
             </nav>
         </div>
         <div class="col-lg-4 text-right d-flex flex-column justify-content-center">
-            <a href="{{ route('products.new') }}"
-                class="btn btn-outline-white mb-0 ms-lg-auto me-lg-0 me-auto mt-lg-0 mt-2">New</a>
+            <a href="{{ route('orders.new') }}"
+                class="btn btn-outline-white mb-0 ms-lg-auto me-lg-0 me-auto mt-lg-0 mt-2">Add New</a>
         </div>
     </div>
 @endsection
@@ -24,7 +24,7 @@
     <div class="container-fluid mt-3 mt-5">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">products</div>
+                <div class="card-header">orders</div>
                 <div class="card-body">
                     <table class="table-striped table-responsive table " id="products_table">
                         <thead>
