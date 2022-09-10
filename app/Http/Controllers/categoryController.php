@@ -21,7 +21,8 @@ class CategoryController extends ParentController
     public function store(Request $request)
     {
         CategoryFacade::store($request->all());
-        return redirect()->route('categories.all');
+        $response['alert-success'] = 'Category created successfully';
+        return redirect()->route('categories.all')->with($response);
 
     }
 
@@ -34,13 +35,15 @@ class CategoryController extends ParentController
     public function delete($category_id)
     {
         CategoryFacade::delete($category_id);
-        return redirect()->back();
+        $response['alert-success'] = 'Category deleted successfully';
+        return redirect()->back()->with($response);
     }
 
     public function update(Request $request, $category_id)
     {
         CategoryFacade::update($request->all(), $category_id);
-        return redirect()->route('categories.all');
+        $response['alert-success'] = 'Category updated successfully';
+        return redirect()->route('categories.all')->with($response);
     }
 
 }
