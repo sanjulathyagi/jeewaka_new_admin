@@ -16,4 +16,9 @@ class Product extends Model
         'quantity',
         'is_active',
     ];
+
+    public function images()
+    {
+        return $this->hasMany(ProductImage::class, 'product_id', 'id');
+    }
 }
