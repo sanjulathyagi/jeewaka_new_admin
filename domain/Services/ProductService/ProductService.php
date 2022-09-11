@@ -3,6 +3,8 @@
 namespace domain\Services\ProductService;
 
 use App\Models\Product;
+use App\Models\ProductImage;
+use infrastructure\Facades\ImageFacade\ImageFacade;
 
 class ProductService
 {
@@ -12,6 +14,7 @@ class ProductService
     public function __construct()
     {
         $this->product = new Product();
+        $this->product = new ProductImage();
     }
 
     public function all()
@@ -48,5 +51,15 @@ class ProductService
         $product = $this->product->find($product_id);
         $product->is_active =$status;
         $product->save();
+    }
+    public function imageUpload($data, $product_id)
+    {
+        $product = $this->product->find($product_id);
+
+        if(isset($data['images'])){
+            $image = ImageFacade::store($data['images'], [1,2,3,4,5]);
+
+        $product->images()->create(['image_id = >$image->id']);
+        }
     }
 }

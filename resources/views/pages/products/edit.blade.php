@@ -75,11 +75,11 @@
         <div class="col-md-5">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('products.image.uploads') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('products.image.uploads',$product->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row mt-3">
                             <div class="col-md-12">
-                                <label> Image</label>
+                                <label> Images</label>
                                 <input class="form-control dropify" name="images" type="file"
                                     accept="image/jpg, image/jpeg, image/png" required>
                             </div>
@@ -88,6 +88,31 @@
                             </div>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row mt-3">
+                        @foreach ($product->images as $product_image )
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <a href="javascript:void(0)"
+                                    onclick="confirmDelete('{{ route('products.image.delete',$product_image->id) }}','Do you want to delete this image?')"
+                                     class="delete-image-btn">
+                                        <i class="fa-solid fa-trash text-danger"></i>
+                                    </a>
+                                    <img src="{{ config('image.access_path') }}/{{ $product_image->image?$product_image->image->name:'' }}"
+                                    alt="" class="img-fluid product-image">
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
@@ -107,4 +132,18 @@
                 console.error(error);
             });
     </script>
+@endpush
+
+@push('styles')
+<style>
+    .delete-image-btn {
+        position: absolute;
+        top:0rem;
+        right:1rem;
+    }
+    .produtc-image{
+        height:100px;
+    }
+</style>
+
 @endpush

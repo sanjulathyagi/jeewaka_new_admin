@@ -51,4 +51,10 @@ class ProductController extends ParentController
         ProductFacade::status($product_id, $status);
         return redirect()->back();
     }
+
+    public function imageUpload(Request $request,$product_id)
+    {
+        ProductFacade::imageUpload($request->all(),$product_id);
+        return redirect()->back();
+    }
 }
