@@ -52,7 +52,7 @@
                                         <a href="{{ route('categories.edit', $category->id) }}"
                                             class="btn btn-outline-primary btn-sm ">
                                             <i class="fa-solid fa-pen-to-square"></i></a>
-                                        <a href="{{ route('categories.edit', $category->id) }}"
+                                        <a href="javascript:void(0)" onclick="delconf('{{ route('categories.delete', $category->id) }}','Do you want to delete this category - {{ $category->name }}?')"
                                             class="btn btn-outline-danger btn-sm ">
                                             <i class="fa-solid fa-trash"></i></a>
                                     </td>
