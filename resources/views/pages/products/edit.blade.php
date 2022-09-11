@@ -23,23 +23,25 @@
 @endsection
 @section('content')
     <div class="container-fluid mt-5 justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-7">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('products.update',$product->id) }}" method="POST">
+                    <form action="{{ route('products.update', $product->id) }}" method="POST">
                         @csrf
                         <div class="row mt-3 ">
                             <div class="col-md-12">
                                 <label>Name</label>
-                                <input class="form-control" type="text" value="{{ $product->name }}"  placeholder="eg: Haircare" required>
+                                <input class="form-control" type="text" value="{{ $product->name }}"
+                                    placeholder="eg: Haircare" required>
                             </div>
                             <div class="col-md-12">
-                                <label>category</label>
+                                <label>Category</label>
                                 <select name="category_id" id="category_id" class="form-control" required>
                                     <option value="1">Select Category</option>
                                     @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}"{{ $product->category_id== $category->id ? 'selected':'' }}
-                                        >{{ $category->name }}</option>
+                                        <option
+                                            value="{{ $category->id }}"{{ $product->category_id == $category->id ? 'selected' : '' }}>
+                                            {{ $category->name }}</option>
                                     @endforeach
 
                                 </select>
@@ -47,16 +49,17 @@
                             <div class="col-md-12">
                                 <label>Price</label>
                                 <input class="form-control" name="price" type="number" step="0.01"
-                                     placeholder="product price" value="{{ $product->price }}" required>
+                                    placeholder="product price" value="{{ $product->price }}" required>
                             </div>
                             <div class="col-md-12">
                                 <label>Quantity</label>
-                                <input class="form-control" type="number" name="quantity"
-                                    placeholder="available quantity" value="{{ $product->quantity }}" required>
+                                <input class="form-control" type="number" name="quantity" placeholder="available quantity"
+                                    value="{{ $product->quantity }}" required>
                             </div>
                             <div class="col-12 col-sm-6 mt-3 mt-sm-0">
                                 <label>Description</label>
-                                <textarea name="description" class="form-control" value="{{ $product->description }}" id="inp_description" cols="30" rows="10">
+                                <textarea name="description" class="form-control" value="{{ $product->description }}" id="inp_description"
+                                    cols="30" rows="10">
                             </textarea>
                             </div>
                             <div class="col-md-12 mt-3">
@@ -69,11 +72,32 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="{{ route('products.image.uploads') }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <label> Image</label>
+                                <input class="form-control dropify" name="images" type="file"
+                                    accept="image/jpg, image/jpeg, image/png" required>
+                            </div>
+                            <div class="col-md-17 mt-3">
+                                <button class="btn btn-primary" type="submit">Uploads</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
 
 @push('scripts')
     <script>
+        $('.dropify').dropify();
+
         ClassicEditor
             .create(document.querySelector('#inp_description'))
             .then(editor => {
