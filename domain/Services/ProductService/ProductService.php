@@ -62,4 +62,10 @@ class ProductService
         $product->images()->create(['image_id = >$image->id']);
         }
     }
+
+    public function imageDelete($image_id)
+    {
+        $product_image = $this->product_images->find($image_id);
+        $product_image->delete();
+    }
 }

@@ -57,4 +57,11 @@ class ProductController extends ParentController
         ProductFacade::imageUpload($request->all(),$product_id);
         return redirect()->back();
     }
+
+    public function imageDelete($product_id)
+    {
+        ProductFacade::imageDelete($product_id);
+        $response['alert-success'] = 'product deleted successfully';
+        return redirect()->back()->with($response);
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use domain\Facades\CategoryFacade;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\TryCatch;
 
 class CategoryController extends ParentController
 {
@@ -34,9 +35,16 @@ class CategoryController extends ParentController
 
     public function delete($category_id)
     {
-        CategoryFacade::delete($category_id);
-        $response['alert-success'] = 'Category deleted successfully';
-        return redirect()->back()->with($response);
+        try {
+            CategoryFacade::delete($category_id);
+            $response['alert-success'] = 'Category deleted successfully';
+            return redirect()->back()->with($response);
+
+        } catch(\Throwable $th){
+            $response['alert-danger'] = 'Category cannot be deleted';
+            return redirect()->back()->with($response);
+        }
+
     }
 
     public function update(Request $request, $category_id)
