@@ -16,7 +16,8 @@ class CategoryController extends ParentController
 
     public function new()
     {
-        return view('pages.categories.new');
+        $response['categories'] = CategoryFacade::all();
+        return view('pages.categories.new')->with($response);
     }
 
     public function store(Request $request)

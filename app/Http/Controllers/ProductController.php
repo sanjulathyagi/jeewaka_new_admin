@@ -16,7 +16,7 @@ class ProductController extends ParentController
 
     public function new()
     {
-        $response['categories'] = CategoryFacade::all();
+        $response['products'] = ProductFacade::all();
         return view('pages.products.new')->with($response);
     }
 
