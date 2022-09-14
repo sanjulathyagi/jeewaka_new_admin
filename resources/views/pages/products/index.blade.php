@@ -32,7 +32,6 @@
                                 <th>Name</th>
                                 <th>Image</th>
                                 <th>Price</th>
-                                <th>Stock</th>
                                 <th>Status</th>
                                 <th style="width: 10%">Action</th>
                             </tr>

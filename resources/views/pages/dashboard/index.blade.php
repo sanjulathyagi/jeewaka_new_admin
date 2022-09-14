@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('header')
-    <div class="row">
-        <div class="col-lg-8">
+    <div class="row pb-6">
+        <div class="col-lg-5">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                     <li class="breadcrumb-item text-sm">
@@ -9,9 +9,9 @@
                             <i class="fa-solid fa-house"></i>
                         </a>
                     </li>
-                    <li class="breadcrumb-item text-sm text-white active" aria-current="page">dashboard</li>
+                    <li class="breadcrumb-item text-sm text-white active" aria-current="page">Dashboard</li>
                 </ol>
-                <h6 class="font-weight-bolder text-white mb-0"> dashboard</h6>
+                <h6 class="font-weight-bolder text-white mb-0"> Dashboard</h6>
             </nav>
         </div>
     </div>

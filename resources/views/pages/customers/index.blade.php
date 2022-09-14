@@ -26,53 +26,52 @@
             <div class="card">
                 <div class="card-header">customers</div>
                 <div class="card-body">
-                    <table class="table-striped table-responsive table " id="products_table">
+                    <table class="table-striped table-responsive table " id="customers_table">
                         <thead>
                             <tr>
                                 <th>Name</th>
                                 <th>Image</th>
                                 <th>Price</th>
-                                <th>Stock</th>
                                 <th>Status</th>
                                 <th style="width: 10%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($products as $product)
+                            @foreach ($customers as $customer)
                                 <tr>
-                                    <td>{{ $product->name }}</td>
+                                    <td>{{ $customer->name }}</td>
                                     <td></td>
                                     <td>
-                                        {{-- <a href="{{ route('products.edit', $product->id) }}"
+                                        {{-- <a href="{{ route('customers.edit', customer->id) }}"
                                             class="btn btn-outline-primary btn-sm ">Edit</a>
-                                            <a href="{{ route('products.edit', $product->id) }}"
+                                            <a href="{{ route('customers.edit', $customer->id) }}"
                                                 class="btn btn-outline-danger btn-sm ">Delete</a> --}}
                                     </td>
-                                    <td>{{ $product->price }}</td>
-                                    <td>{{ $product->quantity }}</td>
+                                    <td>{{ $customer->price }}</td>
+                                    <td>{{ $customer->quantity }}</td>
                                     <td>
-                                        @if ($product->is_active == 1)
+                                        @if ($customer->is_active == 1)
                                             <span class="badge rounded-pill text-bg-success">Active</span>
                                         @else
                                             <span class="badge rounded-pill text-big-danger">Inactive</span>
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route('products.edit', '$product->id') }}"
+                                        <a href="{{ route('customers.edit', '$customer->id') }}"
                                             class="btn btn-outline-primary btn-sm">
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </a>
-                                        <a href="{{ route('products.delete', '$product->id') }}"
+                                        <a href="{{ route('customers.delete', 'customer->id') }}"
                                             class="btn btn-outline-danger btn-sm">
                                             <i class="fa-solid fa-trash"></i>
                                         </a>
                                         @if ($product->is_active == 0)
-                                            <a href="{{ route('products.status', [$product->id, 1]) }}"
+                                            <a href="{{ route('customers.status', [$customer->id, 1]) }}"
                                                 class="btn btn-outline-success btn-sm">
                                                 <i class="fa-solid fa-check-circle"></i>
                                             </a>
                                         @else
-                                            <a href="{{ route('products.status', [$product->id, 0]) }}"
+                                            <a href="{{ route('customers.status', [$customer->id, 0]) }}"
                                                 class="btn btn-outline-danger btn-sm">
                                                 <i class="fa-solid fa-circle-xmark"></i>
                                             </a>
@@ -93,7 +92,8 @@
 @push('scripts')
     <script>
         $(document).ready(function() {
-            $('#products_table').DataTable({
+            
+            $('#customers_table').DataTable({
                 "language": {
                     "emptyTable": "No data available in the table",
                     "paginate": {
