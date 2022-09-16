@@ -17,6 +17,7 @@ class ProductController extends ParentController
     public function new()
     {
         $response['products'] = ProductFacade::all();
+        $response['categories'] = CategoryFacade::all();
         return view('pages.products.new')->with($response);
     }
 
@@ -29,8 +30,9 @@ class ProductController extends ParentController
 
     public function edit($product_id)
     {
-        $response['products'] = ProductFacade::get($product_id);
+        $response['product'] = ProductFacade::get($product_id);
         $response['categories'] = CategoryFacade::all();
+       
         return view('pages.products.edit')->with($response);
     }
 

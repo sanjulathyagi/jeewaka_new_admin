@@ -10,11 +10,10 @@ class ProductService
 {
     protected $product;
 
-
     public function __construct()
     {
         $this->product = new Product();
-        $this->product = new ProductImage();
+        $this->productImage = new ProductImage();
     }
 
     public function all()
@@ -30,14 +29,12 @@ class ProductService
     public function store($data)
     {
         return $this->product->create($data);
-
     }
 
     public function delete($product_id)
     {
         $product = $this->product->find($product_id);
         $product->delete();
-
     }
 
     public function update($data, $product_id)
@@ -49,17 +46,18 @@ class ProductService
     public function status($product_id, $status)
     {
         $product = $this->product->find($product_id);
-        $product->is_active =$status;
+        $product->is_active = $status;
         $product->save();
     }
     public function imageUpload($data, $product_id)
     {
         $product = $this->product->find($product_id);
 
-        if(isset($data['images'])){
-            $image = ImageFacade::store($data['images'], [1,2,3,4,5]);
+        if (isset($data['images'])) {
+            $image = ImageFacade::store($data['images'], [1, 2, 3, 4, 5]);
+          
 
-        $product->images()->create(['image_id = >$image->id']);
+            $product->images()->create(['image_id' => $image['created_images']->id]);
         }
     }
 
