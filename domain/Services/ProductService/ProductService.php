@@ -55,8 +55,6 @@ class ProductService
 
         if (isset($data['images'])) {
             $image = ImageFacade::store($data['images'], [1, 2, 3, 4, 5]);
-          
-
             $product->images()->create(['image_id' => $image['created_images']->id]);
         }
     }

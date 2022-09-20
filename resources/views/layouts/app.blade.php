@@ -18,7 +18,7 @@
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
-    <div class="min-height-100 bg-primary position-absolute w-100"></div>
+    <div class="min-height-150 bg-primary position-absolute w-100"></div>
 
     @include('components.side')
 
