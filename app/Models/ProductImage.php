@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ProductImage extends Model
 {
     use HasFactory;
+
+    const STATUS = [
+        'PRIMARY' => 1,
+        'SECONDARY' => 0,
+    ];
     protected $fillable = [
         'product_id',
         'image_id',

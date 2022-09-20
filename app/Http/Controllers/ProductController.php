@@ -65,4 +65,11 @@ class ProductController extends ParentController
         $response['alert-success'] = 'product deleted successfully';
         return redirect()->back()->with($response);
     }
+
+    public function imagePrimary($product_id)
+    {
+        ProductFacade::imagePrimary($product_id);
+        $response['alert-success'] = 'product set primary successfully';
+        return redirect()->back()->with($response);
+    }
 }

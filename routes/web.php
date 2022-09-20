@@ -61,7 +61,8 @@ Route::prefix('products')->group(function () {
     Route::get('/{product_id}/{status}/status', [ProductController::class,"status"])->name('products.status');
 
     Route::post('/{product_id}/image/uploads', [ProductController::class,"imageUpload"])->name('products.image.uploads');
-    Route::post('/{product_id}/image/delete', [ProductController::class,"imageDelete"])->name('products.image.delete');
+    Route::post('/{product_image_id}/image/delete', [ProductController::class,"imageDelete"])->name('products.image.delete');
+    Route::post('/{product_image_id}/image/primary', [ProductController::class,"imagePrimary"])->name('products.image.primary');
 });
 
 //customers
