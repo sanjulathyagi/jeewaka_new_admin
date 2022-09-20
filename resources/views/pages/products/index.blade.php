@@ -43,7 +43,7 @@
         </div>
         <div class="col-md-12">
             <div class="card">
-             
+
                 <div class="card-header">products</div>
                 <div class="card-body">
                     <table class="table-striped table-responsive table " id="products_table">

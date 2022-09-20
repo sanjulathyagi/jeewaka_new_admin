@@ -97,9 +97,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row mt-3">
-                        
                         @foreach ($product->images as $product_image )
-                        {{-- {{ dd($product_image) }} --}}
                         <div class="col-md-3">
                             <div class="card">
                                 <div class="card-body">

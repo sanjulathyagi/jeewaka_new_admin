@@ -32,7 +32,6 @@ class ProductController extends ParentController
     {
         $response['product'] = ProductFacade::get($product_id);
         $response['categories'] = CategoryFacade::all();
-       
         return view('pages.products.edit')->with($response);
     }
 

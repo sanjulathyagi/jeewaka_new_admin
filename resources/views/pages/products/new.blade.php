@@ -36,10 +36,10 @@
                             </div>
                             <div class="col-md-12">
                                 <label>category</label>
-                                <select name="category_id" id="category_id" class="form-control" required>
-                                    <option value="1">Select Category</option>
+                                <select name="category_id" id="category_id" class="form-control category-selector" required>
+                                    <option value=""></option>
                                     @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
 
                                 </select>
@@ -47,12 +47,12 @@
                             <div class="col-md-12">
                                 <label>Price</label>
                                 <input class="form-control" name="price" type="number" step="0.01"
-                                     placeholder="product price" required>
+                                    placeholder="product price" required>
                             </div>
                             <div class="col-md-12">
                                 <label>Quantity</label>
-                                <input class="form-control" type="number" name="quantity"
-                                    placeholder="available quantity" required>
+                                <input class="form-control" type="number" name="quantity" placeholder="available quantity"
+                                    required>
                             </div>
                             <div class="col-12 col-sm-6 mt-3 mt-sm-0">
                                 <label>Description</label>
@@ -82,5 +82,12 @@
             .catch(error => {
                 console.error(error);
             });
+
+        $(document).ready(function() {
+            $('.category-selector').select2({
+                placeholder: 'Select a Category',
+                allowClear: true
+            });
+        });
     </script>
 @endpush
