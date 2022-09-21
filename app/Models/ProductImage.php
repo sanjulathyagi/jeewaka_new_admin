@@ -29,6 +29,11 @@ class ProductImage extends Model
         return $this->hasOne(Image::class, 'id', 'image_id');
     }
 
+    public function productPrimaryImage($product_id)
+    {
+        return $this->where('product_id',$product_id)->where('status', self::STATUS['PRIMARY'])->get();
+    }
+
 
 
 }
