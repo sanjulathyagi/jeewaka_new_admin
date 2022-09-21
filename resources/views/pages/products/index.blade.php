@@ -41,12 +41,12 @@
                                 <tr>
                                     <td>{{ $product->name }}</td>
                                     <td>
-                                        {{-- @if ($product->images)
-                                            <img src="{{ config('image.access_path') }}/{{ $product->images ? $product->images->name : '' }}"
+                                        @if ($product->primaryImage)
+                                            <img src="{{ config('image.access_path') }}/{{ $product->primaryImage->image?$product->primaryImage->image->name : '' }}"
                                                 width="100px">
                                         @else
                                             <img src="{{ asset('assets/img/no-image-png-2.png') }}" height="50px">
-                                        @endif --}}
+                                        @endif
                                     </td>
                                     <td>{{ $product->price }}</td>
 
