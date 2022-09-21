@@ -55,7 +55,9 @@ class ProductService
 
         if (isset($data['images'])) {
             $image = ImageFacade::store($data['images'], [1, 2, 3, 4, 5]);
-            $product->images()->create(['image_id' => $image['created_images']->id]);
+            $product
+                ->images()
+                ->create(['image_id' => $image['created_images']->id]);
         }
     }
 
@@ -68,6 +70,13 @@ class ProductService
     public function imagePrimary($image_id)
     {
         $product_image = $this->product_images->find($image_id);
+        $product_images = $this->product_images->productPrimaryImages(
+            $product_image->product_id
+        );
+        foreach ($product_images as $product_image) {
+            $product_image->status = ProductImage::STATUS('SECONDARY');
+            $product_image->save();
+        }
         $product_image->status = ProductImage::STATUS('PRIMARY');
         $product_image->save();
     }

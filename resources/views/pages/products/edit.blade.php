@@ -106,10 +106,17 @@
                                      class="delete-image-btn">
                                         <i class="fa-solid fa-trash text-danger"></i>
                                     </a>
+                                    @if ($product_image->status == 0)
                                     <a href="javascript:void(0)"
                                     onclick="confirmApprove('{{ route('products.image.primary',$product_image->id) }}','Do you want to set this image as primary?')"
                                      class="primary-image-btn">
-                                        <i class="fa-solid fa-pen text-danger"></i>
+                                        <i class="fa-solid fa-pen text-info"></i>
+                                    @endif
+                                    @if ($product_image->status == 1)
+                                    <span class="primary-badge badge rounded-pill text-bg-info">Primary</span>
+
+                                    @endif
+
                                     </a>
                                     <img src="{{ config('image.access_path') }}/{{ $product_image->image?$product_image->image->name:'' }}"
                                     alt="" class="img-fluid product-image">
@@ -154,6 +161,11 @@
     }
     .produtc-image{
         height:100px;
+    }
+    .primary-badge {
+        position: absolute;
+        top:0rem;
+        left:0rem;
     }
 </style>
 
