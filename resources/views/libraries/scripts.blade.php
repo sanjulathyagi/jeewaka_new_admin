@@ -242,5 +242,31 @@
             }
         });
     }
+
+
+    function confirmApprove(url, title = "Do You Want To Remove This!") {
+        $.confirm({
+            title: 'Are You Sure,',
+            content: title,
+            autoClose: 'cancel|8000',
+            type: 'blue',
+            confirmButton: "Yes",
+            cancelButton: "Cancel",
+            theme: 'material',
+            backgroundDismiss: false,
+            backgroundDismissAnimation: 'glow',
+            buttons: {
+                'Yes, Do IT': function () {
+                    window.location.href = url;
+                    confirmButton: "Yes";
+                    cancelButton: "Cancel";
+                },
+                cancel: function () {
+
+                },
+
+            }
+        });
+    }
 </script>
 @stack('scripts')

@@ -102,9 +102,14 @@
                             <div class="card">
                                 <div class="card-body">
                                     <a href="javascript:void(0)"
-                                    onclick="confirmDelete('{{ route('products.image.delete',$product_image->id) }}','Do you want to delete this image?')"
+                                    onclick="delconf('{{ route('products.image.delete',$product_image->id) }}','Do you want to delete this image?')"
                                      class="delete-image-btn">
                                         <i class="fa-solid fa-trash text-danger"></i>
+                                    </a>
+                                    <a href="javascript:void(0)"
+                                    onclick="confirmApprove('{{ route('products.image.primary',$product_image->id) }}','Do you want to set this image as primary?')"
+                                     class="primary-image-btn">
+                                        <i class="fa-solid fa-pen text-danger"></i>
                                     </a>
                                     <img src="{{ config('image.access_path') }}/{{ $product_image->image?$product_image->image->name:'' }}"
                                     alt="" class="img-fluid product-image">
@@ -140,6 +145,12 @@
         position: absolute;
         top:0rem;
         right:1rem;
+    }
+
+    .primary-image-btn {
+        position: absolute;
+        top:0rem;
+        right:2.5rem;
     }
     .produtc-image{
         height:100px;

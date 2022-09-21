@@ -64,4 +64,11 @@ class ProductService
         $product_image = $this->product_images->find($image_id);
         $product_image->delete();
     }
+
+    public function imagePrimary($image_id)
+    {
+        $product_image = $this->product_images->find($image_id);
+        $product_image->status = ProductImage::STATUS('PRIMARY');
+        $product_image->save();
+    }
 }
