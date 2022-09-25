@@ -101,11 +101,13 @@
                         <div class="col-md-3">
                             <div class="card">
                                 <div class="card-body">
+                                    @if($product_image->status == 0)
                                     <a href="javascript:void(0)"
                                     onclick="delconf('{{ route('products.image.delete',$product_image->id) }}','Do you want to delete this image?')"
                                      class="delete-image-btn">
                                         <i class="fa-solid fa-trash text-danger"></i>
                                     </a>
+                                    @endif
                                     @if ($product_image->status == 0)
                                     <a href="javascript:void(0)"
                                     onclick="confirmApprove('{{ route('products.image.primary',$product_image->id) }}','Do you want to set this image as primary?')"
