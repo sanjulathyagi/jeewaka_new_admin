@@ -51,12 +51,12 @@
                                     <td>{{ $product->price }}</td>
 
                                     <td>
-                                        @if ($product->is_active == 1)
+                                        {{-- @if ($product->is_active == 1)
                                             <span class="badge rounded-pill text-bg-success">Active</span>
                                         @else
                                             <span class="badge rounded-pill text-big-danger">Inactive</span>
                                         @endif
-                                    </td>
+                                    </td> --}}
                                     <td>
                                         <a href="{{ route('products.edit', '$product->id') }}"
                                             class="btn btn-outline-primary btn-sm">
