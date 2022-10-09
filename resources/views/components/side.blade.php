@@ -89,6 +89,20 @@
               </div>
               <span class="nav-link-text ms-1">Customer Management</span>
             </a>
+            <ul class="collapse list-unstyled" id="customer-menu">
+                <li class="nav-item">
+                    <a class="nav-link {{ in_array($curr_url,['customers.all','customers.edit','customers.view','customers.new'])?'active':'' }}"
+                        href="{{ route('customers.all') }}">
+                        <i class="fas fa-users-cog ml-4"></i><span class="hide-menu">Customers</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ in_array($curr_url,['agency.all','agency.edit','agency.view','agency.new'])?'active':'' }}"
+                        href="{{ route('agency.all') }}">
+                        <i class="fas fa-building ml-4"></i><span class="hide-menu">Agency</span>
+                    </a>
+                </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ in_array($curr_url,['requests.all','requests.new','requests.edit'])?'active':'' }}" href="{{ route('requests.all') }}">
@@ -113,6 +127,35 @@
               </div>
               <span class="nav-link-text ms-1">Settings</span>
             </a>
+            <ul class="collapse list-unstyled" id="homesubmenu">
+                <li class="nav-item">
+                    <a class="nav-link {{ in_array($curr_url,['settings.social'])?'active':'' }}"
+                        href="{{ route('settings.social') }}">
+                        <i class="fa fa-users ml-4"></i><span class="hide-menu">Social</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ in_array($curr_url,['settings.contact'])?'active':'' }}"
+                        href="{{ route('settings.contact') }}">
+                        <i class="fa fa-phone ml-4"></i><span class="hide-menu">Contact</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ in_array($curr_url,['settings.day'])?'active':'' }}"
+                        href="{{ route('settings.day') }}">
+                        <i class="fa fa-clock ml-4"></i><span class="hide-menu">Open Time</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ in_array($curr_url,['settings.shipping'])?'active':'' }}"
+                        href="{{ route('settings.shipping') }}">
+                        <i class="fas fa-shipping-fast ml-4"></i><span class="hide-menu">Shipping</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
           </li>
       </ul>
     </div>
