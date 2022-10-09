@@ -32,6 +32,27 @@
               </div>
               <span class="nav-link-text ms-1">Product Management</span>
             </a>
+            <ul class="collapse list-unstyled" id="item-menu">
+                <li class="nav-item">
+                    <a class="nav-link {{ in_array($curr_url,['items.new','items.all','items.edit','view.items','items.upload.image.status'])?'active':'' }}"
+                        href="{{ route('items.all') }}">
+                        <i class="fab fa-envira ml-4"></i>
+                        <span class="hide-menu">Products</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ in_array($curr_url,['items.receive.all'])?'active':'' }}"
+                        href="{{ route('items.receive.all') }}">
+                        <i class="fas fa-cubes ml-4"></i><span class="hide-menu">Stock Receive</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ in_array($curr_url,['items.return.all'])?'active':'' }}"
+                        href="{{ route('items.return.all') }}">
+                        <i class="fas fa-undo ml-4"></i><span class="hide-menu">Stock Return</span>
+                    </a>
+                </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ in_array($curr_url,['orders.all','orders.new','orders.edit'])?'active':'' }}" href="{{ route('orders.all') }}">
@@ -40,6 +61,26 @@
               </div>
               <span class="nav-link-text ms-1">Order Management</span>
             </a>
+            <ul class="collapse list-unstyled" id="order-menu">
+                <li class="nav-item">
+                    <a class="nav-link {{ in_array($curr_url,['orders.retail.new','orders.retail.all','orders.retail.edit','orders.retail.view'])?'active':'' }}"
+                        href="{{ route('orders.retail.all') }}">
+                        <i class="fas fa-briefcase ml-4"></i><span class="hide-menu">Retail Orders</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ in_array($curr_url,['orders.wholesale.new','orders.wholesale.all','orders.wholesale.edit','orders.wholesale.view'])?'active':'' }}"
+                        href="{{ route('orders.wholesale.all') }}">
+                        <i class="fas fa-luggage-cart ml-4"></i><span class="hide-menu">Wholesale Orders</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ in_array($curr_url,['quotations.all','quotations.view'])?'active':'' }}"
+                        href="{{ route('quotations.all') }}">
+                        <i class="fas fa-clipboard-list ml-4"></i><span class="hide-menu">Quotations</span>
+                    </a>
+                </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ in_array($curr_url,['customers.all','customers.new','customers.edit'])?'active':'' }}" href="{{ route('customers.all') }}">
