@@ -34,21 +34,21 @@
             </a>
             <ul class="collapse list-unstyled" id="item-menu">
                 <li class="nav-item">
-                    <a class="nav-link {{ in_array($curr_url,['items.new','items.all','items.edit','view.items','items.upload.image.status'])?'active':'' }}"
-                        href="{{ route('items.all') }}">
+                  <a class="nav-link {{ in_array($curr_url,['products.all','products.new','products.edit'])?'active':'' }}"
+                   href="{{ route('products.all') }}">
                         <i class="fab fa-envira ml-4"></i>
                         <span class="hide-menu">Products</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ in_array($curr_url,['items.receive.all'])?'active':'' }}"
-                        href="{{ route('items.receive.all') }}">
+                    <a class="nav-link {{ in_array($curr_url,['products.receive.all'])?'active':'' }}"
+                        href="{{ route('products.receive.all') }}">
                         <i class="fas fa-cubes ml-4"></i><span class="hide-menu">Stock Receive</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ in_array($curr_url,['items.return.all'])?'active':'' }}"
-                        href="{{ route('items.return.all') }}">
+                    <a class="nav-link {{ in_array($curr_url,['products.return.all'])?'active':'' }}"
+                        href="{{ route('products.return.all') }}">
                         <i class="fas fa-undo ml-4"></i><span class="hide-menu">Stock Return</span>
                     </a>
                 </li>

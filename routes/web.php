@@ -63,6 +63,24 @@ Route::prefix('products')->group(function () {
     Route::post('/{product_id}/image/uploads', [ProductController::class,"imageUpload"])->name('products.image.uploads');
     Route::post('/{product_image_id}/image/delete', [ProductController::class,"imageDelete"])->name('products.image.delete');
     Route::post('/{product_image_id}/image/primary', [ProductController::class,"imagePrimary"])->name('products.image.primary');
+
+    Route::prefix('/receive')->group(function () {
+        Route::get('/', [ProductController::class, "receive"])->name('products.receive.all');
+        Route::post('/store', [ProductController::class, "receiveStore"])->name('products.receive.store');
+        Route::get('/{stock_receive_id}/delete', [ProductController::class, "receiveDelete"])->name('products.receive.delete');
+        Route::get('/{stock_receive_id}/approve', [ProductController::class, "receiveApprove"])->name('products.receive.approve');
+        Route::get('/{stock_receive_id}/cancel', [ProductController::class, "receiveCancel"])->name('products.receive.cancel');
+        Route::get('/get/item/view', [ProductController::class, "selectReceiveItem"])->name('products.receive.item.view');
+    });
+
+    Route::prefix('/return')->group(function () {
+        Route::get('/', [ProductController::class, "return"])->name('products.return.all');
+        Route::post('/store', [ProductController::class, "returnStore"])->name('products.return.store');
+        Route::get('/{stock_return_id}/delete', [ProductController::class, "returnDelete"])->name('products.return.delete');
+        Route::get('/{stock_return_id}/approve', [ProductController::class, "returnApprove"])->name('products.return.approve');
+        Route::get('/{stock_return_id}/cancel', [ProductController::class, "returnCancel"])->name('products.return.cancel');
+        Route::get('/get/item/view', [ProductController::class, "selectReturnItem"])->name('products.return.item.view');
+    });
 });
 
 //customers

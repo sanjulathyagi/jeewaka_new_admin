@@ -93,4 +93,77 @@ class ProductService
         $product_image->status = ProductImage::STATUS('PRIMARY');
         $product_image->save();
     }
+
+    public function allReceive()
+    {
+        return $this->receive->all();
+    }
+
+    public function makeReceive($data)
+    {
+        return $this->receive->create($data);
+    }
+
+    public function receiveDelete($receive_id)
+    {
+        $receive = $this->receive->find($receive_id);
+        $receive->update();
+        return $receive->delete();
+    }
+
+    public function receiveCancel($receive_id)
+    {
+        $receive = $this->receive->find($receive_id);
+        $receive->status = 2;
+        $receive->update();
+    }
+
+    public function receiveApprove($receive_id)
+    {
+        $receive = $this->receive->find($receive_id);
+        $receive->status = 1;
+        $receive->update();
+
+        $item =  $this->item->find($receive->item_id);
+
+        $item->quantity = $item->quantity + $receive->quantity;
+        $item->update();
+
+    }
+
+    public function allReturn()
+    {
+        return $this->returns->all();
+    }
+
+    public function makeReturn($data)
+    {
+        return $this->returns->create($data);
+    }
+
+    public function returnDelete($return_id)
+    {
+        $returns = $this->returns->find($return_id);
+        $returns->update();
+        return $returns->delete();
+    }
+
+    public function returnCancel($return_id)
+    {
+        $returns = $this->returns->find($return_id);
+        $returns->status = 2;
+        $returns->update();
+    }
+
+    public function returnApprove($return_id)
+    {
+        $returns = $this->returns->find($return_id);
+        $returns->status = 1;
+        $returns->update();
+
+        $item =  $this->item->find($returns->item_id);
+
+        $item->quantity = $item->quantity + $returns->quantity;
+        $item->update();
+    }
 }
