@@ -49,7 +49,7 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Today's Users</p>
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Active Items</p>
                                 <h5 class="font-weight-bolder">
                                     2,300
                                 </h5>
@@ -74,7 +74,7 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-uppercase font-weight-bold">New Clients</p>
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Monthly Profit</p>
                                 <h5 class="font-weight-bolder">
                                     +3,462
                                 </h5>
@@ -99,7 +99,7 @@
                     <div class="row">
                         <div class="col-8">
                             <div class="numbers">
-                                <p class="text-sm mb-0 text-uppercase font-weight-bold">Sales</p>
+                                <p class="text-sm mb-0 text-uppercase font-weight-bold">New Requests</p>
                                 <h5 class="font-weight-bolder">
                                     $103,430
                                 </h5>
