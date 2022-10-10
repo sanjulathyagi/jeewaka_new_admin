@@ -15,7 +15,7 @@
             </nav>
         </div>
         <div class="col-lg-4 text-right d-flex flex-column justify-content-center">
-            <a href="{{ route('products.new') }}"
+            <a href="{{ route('products.return.all') }}"
                 class="btn btn-outline-white mb-0 ms-lg-auto me-lg-0 me-auto mt-lg-0 mt-2">New</a>
         </div>
     </div>

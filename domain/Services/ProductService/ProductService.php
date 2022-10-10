@@ -4,6 +4,8 @@ namespace domain\Services\ProductService;
 
 use App\Models\Product;
 use App\Models\ProductImage;
+use App\Models\StockReceive;
+use App\Models\StockReturn;
 use infrastructure\Facades\ImageFacade\ImageFacade;
 
 class ProductService
@@ -14,6 +16,8 @@ class ProductService
     {
         $this->product = new Product();
         $this->productImage = new ProductImage();
+        $this->receive = new StockReceive();
+        $this->returns = new StockReturn();
     }
 
     public function all()
