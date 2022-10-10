@@ -44,7 +44,9 @@ class ProductController extends ParentController
 
     public function update(Request $request, $product_id)
     {
+       
         ProductFacade::update($request->all(), $product_id);
+
         return redirect()->route('products.edit', $product_id);
     }
 
@@ -79,14 +81,13 @@ class ProductController extends ParentController
     {
         $response['receives'] = ProductFacade::allReceive();
         $response['items'] = ProductFacade::getActive();
-        $response['tc'] = $this;
         return view('Pages.Items.StockReceive.all')->with($response);
     }
 
     public function selectReceiveItem(Request $request)
     {
         $response['item'] = ProductFacade::find($request['item_id']);
-        $response['tc'] = $this;
+
         return view('Pages.Items.StockReceive.Components.itemView')->with($response);
     }
 

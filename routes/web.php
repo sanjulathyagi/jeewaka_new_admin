@@ -62,7 +62,7 @@ Route::prefix('products')->group(function () {
 
     Route::post('/{product_id}/image/uploads', [ProductController::class,"imageUpload"])->name('products.image.uploads');
     Route::post('/{product_image_id}/image/delete', [ProductController::class,"imageDelete"])->name('products.image.delete');
-    Route::post('/{product_image_id}/image/primary', [ProductController::class,"imagePrimary"])->name('products.image.primary');
+    Route::get('/{product_image_id}/image/primary', [ProductController::class,"imagePrimary"])->name('products.image.primary');
 
     Route::prefix('/receive')->group(function () {
         Route::get('/', [ProductController::class, "receive"])->name('products.receive.all');
@@ -96,13 +96,34 @@ Route::prefix('Customers')->group(function () {
 
 //orders
 Route::prefix('orders')->group(function () {
-    Route::get('/', [OrderController::class,"index"])->name('orders.all');
-    Route::get('/new', [OrderController::class,"new"])->name('orders.new');
-    Route::post('/store', [OrderController::class,"store"])->name('orders.store');
-    Route::get('/{order_id}/edit', [OrderController::class,"edit"])->name('orders.edit');
-    Route::post('/{order_id}/update', [OrderController::class,"update"])->name('orders.update');
-    Route::get('/{order_id}/delete', [OrderController::class,"delete"])->name('orders.delete');
-    Route::get('/{order_id}/{status}/status', [OrderController::class,"status"])->name('orders.status');
+
+    Route::prefix('/retail')->group(function () {
+        Route::get('/', [OrderController::class, "index"])->name('orders.retail.all');
+        Route::get('/new-order', [OrderController::class, "new"])->name('orders.retail.new');
+        Route::get('/{order_id}/edit', [OrderController::class, "edit"])->name('orders.retail.edit');
+        Route::post('/store', [OrderController::class, "store"])->name('orders.retail.store');
+        Route::post('/add/item', [OrderController::class, "addNewProduct"])->name('orders.retail.add.item');
+        Route::post('/update', [OrderController::class, "update"])->name('orders.retail.update');
+        Route::get('/{order_id}/view', [OrderController::class, "view"])->name('orders.retail.view');
+        Route::get('/{order_id}/delete', [OrderController::class, "delete"])->name('orders.retail.delete');
+        Route::get('/{order_item_id}/item/delete', [OrderController::class, "productDelete"])->name('orders.retail.product.delete');
+        Route::get('/{order_id}/{status}/status', [OrderController::class, "status"])->name('orders.retail.status');
+
+    });
+
+    Route::prefix('/wholesale')->group(function () {
+        Route::get('/', [OrderWSController::class, "index"])->name('orders.wholesale.all');
+        Route::get('/new-order', [OrderWSController::class, "new"])->name('orders.wholesale.new');
+        Route::get('/{order_id}/edit', [OrderWSController::class, "edit"])->name('orders.wholesale.edit');
+        Route::post('/store', [OrderWSController::class, "store"])->name('orders.wholesale.store');
+        Route::post('/add/item', [OrderWSController::class, "addNewItem"])->name('orders.wholesale.add.item');
+        Route::post('/update', [OrderWSController::class, "update"])->name('orders.wholesale.update');
+        Route::get('/{order_id}/view', [OrderWSController::class, "view"])->name('orders.wholesale.view');
+        Route::get('/{order_id}/delete', [OrderWSController::class, "delete"])->name('orders.wholesale.delete');
+        Route::get('/{order_item_id}/item/delete', [OrderWSController::class, "itemDelete"])->name('orders.wholesale.item.delete');
+        Route::get('/{order_id}/{status}/status', [OrderWSController::class, "status"])->name('orders.wholesale.status');
+
+    });
 });
 
 //requests

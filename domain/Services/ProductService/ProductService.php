@@ -60,10 +60,10 @@ class ProductService
         if (isset($data['images'])) {
             $image = ImageFacade::store($data['images'], [1, 2, 3, 4, 5]);
 
-            $product_images = $this->product_images->productPrimaryImages(
+            $productImage = $this->productImage->productPrimaryImages(
                 $product_id
             );
-            $count = count($product_images);
+            $count = count($productImage);
 
             if ($count == 0) {
                 $product->images()->create([
@@ -80,21 +80,21 @@ class ProductService
 
     public function imageDelete($image_id)
     {
-        $product_image = $this->product_images->find($image_id);
+        $product_image = $this->productImage->find($image_id);
         $product_image->delete();
     }
 
     public function imagePrimary($image_id)
     {
-        $product_image = $this->product_images->find($image_id);
-        $product_images = $this->product_images->productPrimaryImages(
+        $product_image = $this->productImage->find($image_id);
+        $productImage = $this->productImage->productPrimaryImage(
             $product_image->product_id
         );
-        foreach ($product_images as $image) {
-            $image->status = ProductImage::STATUS('SECONDARY');
+        foreach ($productImage as $image) {
+            $image->status = ProductImage::STATUS['SECONDARY'];
             $image->save();
         }
-        $product_image->status = ProductImage::STATUS('PRIMARY');
+        $product_image->status = ProductImage::STATUS['PRIMARY'];
         $product_image->save();
     }
 

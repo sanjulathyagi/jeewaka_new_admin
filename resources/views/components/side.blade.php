@@ -32,6 +32,70 @@
               </div>
               <span class="nav-link-text ms-1">Product Management</span>
             </a>
+            <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#dashboardsExamples" class="nav-link active" aria-controls="dashboardsExamples" role="button" aria-expanded="true">
+                <div class="icon icon-shape icon-sm text-center d-flex align-items-center justify-content-center">
+                <i class="ni ni-shop text-primary text-sm opacity-10"></i>
+                </div>
+                <span class="nav-link-text ms-1">Dashboards</span>
+                </a>
+                <div class="collapse show" id="dashboardsExamples" style="">
+                <ul class="nav ms-4">
+                <li class="nav-item ">
+                <a class="nav-link " href="../../pages/dashboards/landing.html">
+                <span class="sidenav-mini-icon"> L </span>
+                <span class="sidenav-normal"> Landing </span>
+                </a>
+                </li>
+                <li class="nav-item active">
+                <a class="nav-link active" href="../../pages/dashboards/default.html">
+                <span class="sidenav-mini-icon"> D </span>
+                <span class="sidenav-normal"> Default </span>
+                </a>
+                </li>
+                <li class="nav-item ">
+                 <a class="nav-link " href="../../pages/dashboards/automotive.html">
+                <span class="sidenav-mini-icon"> A </span>
+                <span class="sidenav-normal"> Automotive </span>
+                </a>
+                </li>
+                <li class="nav-item ">
+                <a class="nav-link " href="../../pages/dashboards/smart-home.html">
+                <span class="sidenav-mini-icon"> S </span>
+                <span class="sidenav-normal"> Smart Home </span>
+                </a>
+                </li>
+                <li class="nav-item ">
+                <a class="nav-link" data-bs-toggle="collapse" aria-expanded="true" href="#vrExamples">
+                <span class="sidenav-mini-icon"> V </span>
+                <span class="sidenav-normal"> Virtual Reality <b class="caret"></b></span>
+                </a>
+                <div class="collapse show" id="vrExamples" style="">
+                <ul class="nav nav-sm flex-column">
+                <li class="nav-item">
+                <a class="nav-link " href="../../pages/dashboards/vr/vr-default.html">
+                <span class="sidenav-mini-icon text-xs"> V </span>
+                <span class="sidenav-normal"> VR Default </span>
+                </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link " href="../../pages/dashboards/vr/vr-info.html">
+                <span class="sidenav-mini-icon text-xs"> V </span>
+                <span class="sidenav-normal"> VR Info </span>
+                </a>
+                </li>
+                </ul>
+                </div>
+                </li>
+                <li class="nav-item ">
+                <a class="nav-link " href="../../pages/dashboards/crm.html">
+                <span class="sidenav-mini-icon"> C </span>
+                <span class="sidenav-normal"> CRM </span>
+                </a>
+                </li>
+                </ul>
+                </div>
+                </li>
             <ul class="collapse list-unstyled" id="item-menu">
                 <li class="nav-item">
                   <a class="nav-link {{ in_array($curr_url,['products.all','products.new','products.edit'])?'active':'' }}"
@@ -55,7 +119,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ in_array($curr_url,['orders.all','orders.new','orders.edit'])?'active':'' }}" href="{{ route('orders.all') }}">
+            <a class="nav-link {{ in_array($curr_url,['orders.retail.all','orders.retail.new','orders.retail.edit'])?'active':'' }}" href="{{ route('orders.retail.all') }}">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="fa fa-shopping-bag"></i>
               </div>
@@ -75,10 +139,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ in_array($curr_url,['quotations.all','quotations.view'])?'active':'' }}"
+                    {{-- <a class="nav-link {{ in_array($curr_url,['quotations.all','quotations.view'])?'active':'' }}"
                         href="{{ route('quotations.all') }}">
                         <i class="fas fa-clipboard-list ml-4"></i><span class="hide-menu">Quotations</span>
-                    </a>
+                    </a> --}}
                 </li>
             </ul>
           </li>
@@ -96,12 +160,12 @@
                         <i class="fas fa-users-cog ml-4"></i><span class="hide-menu">Customers</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link {{ in_array($curr_url,['agency.all','agency.edit','agency.view','agency.new'])?'active':'' }}"
                         href="{{ route('agency.all') }}">
                         <i class="fas fa-building ml-4"></i><span class="hide-menu">Agency</span>
                     </a>
-                </li>
+                </li> --}}
             </ul>
           </li>
           <li class="nav-item">
@@ -127,7 +191,7 @@
               </div>
               <span class="nav-link-text ms-1">Settings</span>
             </a>
-            <ul class="collapse list-unstyled" id="homesubmenu">
+            {{-- <ul class="collapse list-unstyled" id="homesubmenu">
                 <li class="nav-item">
                     <a class="nav-link {{ in_array($curr_url,['settings.social'])?'active':'' }}"
                         href="{{ route('settings.social') }}">
@@ -151,7 +215,7 @@
                         href="{{ route('settings.shipping') }}">
                         <i class="fas fa-shipping-fast ml-4"></i><span class="hide-menu">Shipping</span>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </li>
 

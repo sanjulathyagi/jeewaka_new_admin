@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use domain\Facades\OrderFacade;
 use Illuminate\Http\Request;
 
-class OrderController extends ParentController
+class OrderWSController extends Controller
 {
     public function index()
     {

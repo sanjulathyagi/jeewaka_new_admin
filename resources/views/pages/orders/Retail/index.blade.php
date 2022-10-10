@@ -9,14 +9,14 @@
                             <i class="fa-solid fa-house"></i>
                         </a>
                     </li>
-                    <li class="breadcrumb-item text-sm text-white active" aria-current="page">Products</li>
+                    <li class="breadcrumb-item text-sm text-white active" aria-current="page">Orders</li>
                 </ol>
-                <h6 class="font-weight-bolder text-white mb-0"> All products</h6>
+                <h6 class="font-weight-bolder text-white mb-0"> All Orders</h6>
             </nav>
         </div>
         <div class="col-lg-4 text-right d-flex flex-column justify-content-center">
-            <a href="{{ route('products.new') }}"
-                class="btn btn-outline-white mb-0 ms-lg-auto me-lg-0 me-auto mt-lg-0 mt-2">New</a>
+            <a href="{{ route('orders.retail.new') }}"
+                class="btn btn-outline-white mb-0 ms-lg-auto me-lg-0 me-auto mt-lg-0 mt-2">Add New</a>
         </div>
     </div>
 @endsection
@@ -24,7 +24,7 @@
     <div class="container-fluid mt-3 mt-5">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">products</div>
+                <div class="card-header">orders</div>
                 <div class="card-body">
                     <table class="table-striped table-responsive table " id="products_table">
                         <thead>
@@ -32,6 +32,7 @@
                                 <th>Name</th>
                                 <th>Image</th>
                                 <th>Price</th>
+                                <th>Stock</th>
                                 <th>Status</th>
                                 <th style="width: 10%">Action</th>
                             </tr>
@@ -40,17 +41,15 @@
                             @foreach ($products as $product)
                                 <tr>
                                     <td>{{ $product->name }}</td>
+                                    <td></td>
                                     <td>
-                                        @if ($product->primaryImage)
-                                        {{-- {{ dd($product->primaryImage->image) }} --}}
-                                            <img src="{{ config('image.access_path') }}/{{ $product->primaryImage->image?$product->primaryImage->image->name : '' }}"
-                                                width="100px">
-                                        @else
-                                            <img src="{{ asset('assets/img/no-image-png-2.png') }}" height="50px">
-                                        @endif
+                                        {{-- <a href="{{ route('products.edit', $product->id) }}"
+                                            class="btn btn-outline-primary btn-sm ">Edit</a>
+                                            <a href="{{ route('products.edit', $product->id) }}"
+                                                class="btn btn-outline-danger btn-sm ">Delete</a> --}}
                                     </td>
                                     <td>{{ $product->price }}</td>
-
+                                    <td>{{ $product->quantity }}</td>
                                     <td>
                                         @if ($product->is_active == 1)
                                             <span class="badge rounded-pill text-bg-success">Active</span>
@@ -59,11 +58,11 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route('products.edit', $product->id) }}"
+                                        <a href="{{ route('products.edit', '$product->id') }}"
                                             class="btn btn-outline-primary btn-sm">
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </a>
-                                        <a href="{{ route('products.delete', $product->id) }}"
+                                        <a href="{{ route('products.delete', '$product->id') }}"
                                             class="btn btn-outline-danger btn-sm">
                                             <i class="fa-solid fa-trash"></i>
                                         </a>

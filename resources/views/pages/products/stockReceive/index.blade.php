@@ -49,26 +49,30 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route('products.edit', '$product->id') }}"
-                                            class="btn btn-outline-primary btn-sm">
-                                            <i class="fa-solid fa-pen-to-square"></i>
-                                        </a>
-                                        <a href="{{ route('products.delete', '$product->id') }}"
-                                            class="btn btn-outline-danger btn-sm">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </a>
-                                        @if ($product->is_active == 0)
-                                            <a href="{{ route('products.status', [$product->id, 1]) }}"
-                                                class="btn btn-outline-success btn-sm">
-                                                <i class="fa-solid fa-check-circle"></i>
+                                        <div class="dropdown no-arrow mb-1">
+                                            <a class="btn btn-sm btn-icon-only text-dark" href="#" role="button"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-cog"></i>
                                             </a>
-                                        @else
-                                            <a href="{{ route('products.status', [$product->id, 0]) }}"
-                                                class="btn btn-outline-danger btn-sm">
-                                                <i class="fa-solid fa-circle-xmark"></i>
-                                            </a>
-                                        @endif
-
+                                            <div class="dropdown-menu dropdown-menu-left shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuButton" x-placement="bottom-start"
+                                                style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                                <a class="dropdown-item delete-product" href="javascript:void(0)"
+                                                    class="btn btn-danger" title=""
+                                                    onclick="delconf('{{ route('products.receive.delete', $receive->id) }}')"><i
+                                                        class="far fa-trash-alt"></i>&nbsp;Delete</a>
+                                                @if ($receive->status == 0)
+                                                    <a class="dropdown-item change-status" href="javascript:void(0)"
+                                                        class="btn btn-danger" title=""
+                                                        onclick="decline('{{ route('products.receive.cancel', $receive->id) }}')"><i
+                                                            class="fas fa-times-circle"></i>&nbsp;Cancel</a>
+                                                    <a class="dropdown-item change-status" href="javascript:void(0)"
+                                                        class="btn btn-danger" title=""
+                                                        onclick="approve('{{ route('products.receive.approve', $receive->id) }}')"><i
+                                                            class="far fa-check-square"></i>&nbsp;Approve</a>
+                                                @endif
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach

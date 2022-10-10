@@ -31,7 +31,7 @@
                         <div class="row mt-3 ">
                             <div class="col-md-12">
                                 <label>Name</label>
-                                <input class="form-control" type="text" value="{{ $product->name }}"
+                                <input class="form-control" type="text" name="name" value="{{ $product->name }}"
                                     placeholder="eg: Haircare" required>
                             </div>
                             <div class="col-md-12">

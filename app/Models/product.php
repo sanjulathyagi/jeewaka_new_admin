@@ -24,6 +24,6 @@ class Product extends Model
 
     public function primaryImage()
     {
-        return $this->hasMany(ProductImage::class, 'product_id', 'id')->where('status',ProductImage::STATUS['PRIMARY']);
+        return $this->hasOne(ProductImage::class, 'product_id', 'id')->where('status',ProductImage::STATUS['PRIMARY']);
     }
 }
