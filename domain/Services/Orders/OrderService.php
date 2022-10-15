@@ -1,6 +1,6 @@
 <?php
 
-namespace domain\Services\OrderService;
+namespace domain\Services\Orders;
 
 use App\Models\Order;
 use infrastructure\Facades\ImageFacade\ImageFacade;

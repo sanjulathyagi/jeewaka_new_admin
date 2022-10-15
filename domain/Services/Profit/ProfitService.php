@@ -1,6 +1,6 @@
 <?php
 
-namespace domain\Services\ProfitService;
+namespace domain\Services\Profit;
 
 use App\Models\Profit;
 use infrastructure\Facades\ImageFacade\ImageFacade;
