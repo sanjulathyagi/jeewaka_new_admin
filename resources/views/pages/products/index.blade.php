@@ -42,7 +42,6 @@
                                     <td>{{ $product->name }}</td>
                                     <td>
                                         @if ($product->primaryImage)
-                                        {{-- {{ dd($product->primaryImage->image) }} --}}
                                             <img src="{{ config('image.access_path') }}/{{ $product->primaryImage->image?$product->primaryImage->image->name : '' }}"
                                                 width="100px">
                                         @else
