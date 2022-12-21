@@ -69,5 +69,23 @@
             .catch(error => {
                 console.error(error);
             });
+
+            $('#category_name').on('key',function(){
+                var name = $(this).val();
+                var data = {
+                };
+                    $.ajax{{
+                        url: "/products/filter?page=" +page,
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
+                        },
+                        type: 'GET',
+                        data: data,
+                        success: function(data){
+                            console.log(data);
+                        }
+
+                     }};
+            });
     </script>
 @endpush
