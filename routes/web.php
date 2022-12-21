@@ -35,6 +35,7 @@ Route::prefix('categories')->group(function () {
     Route::get('/{category_id}/edit', [CategoryController::class,"edit"])->name('categories.edit');
     Route::post('/{category_id}/update', [CategoryController::class,"update"])->name('categories.update');
     Route::get('/{category_id}/delete', [CategoryController::class,"delete"])->name('categories.delete');
+    Route::get('/validate/name', [CategoryController::class,"validateName"])->name('categories.validate.name');
 });
 
 //products
