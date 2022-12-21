@@ -19,6 +19,14 @@ class Category extends Model
         return $this->hasOne(Image::class,'id', 'image_id');
 
     }
-    public function 
+    public function validateName($name)
+    {
+        $category = $this->where('name', $name)->first();
+        if($category){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
 
 }
