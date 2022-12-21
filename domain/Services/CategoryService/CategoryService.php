@@ -50,4 +50,9 @@ class CategoryService
 
     }
 
+    public function validateName($name)
+    {
+        return $category = $this->category->validateName($name);
+    }
+
 }

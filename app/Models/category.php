@@ -19,5 +19,6 @@ class Category extends Model
         return $this->hasOne(Image::class,'id', 'image_id');
 
     }
+    public function 
 
 }
