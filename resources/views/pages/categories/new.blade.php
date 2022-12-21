@@ -33,6 +33,7 @@
                                 <label>Name</label>
                                 <input class="form-control" type="text" value="" name="name"
                                     type="text" placeholder="eg.haircare">
+                                <small id="category_name_msg"></small>
                             </div>
                             <div class="col-md-12">
                                 <label>Image</label>
@@ -81,8 +82,16 @@
                         },
                         type: 'GET',
                         data: data,
-                        success: function(data){
-                            console.log(data);
+                        success: function(response){
+                            if (response==1) {
+                                $('#category_name_msg').html('category already exists');
+                                $('#category_name_msg').addClass('text-danger').removeClass('text-success');
+
+                            } else {
+                                $('#category_name_msg').html('category name is available');
+                                $('#category_name_msg').removeClass('text-danger').addClass('text-sucess');
+
+                            }
                         }
 
                      }};
