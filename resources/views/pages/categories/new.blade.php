@@ -75,7 +75,7 @@
                 var data = {
                 };
                     $.ajax{{
-                        url: "/products/filter?page=" +page,
+                        url: "{{ route('categories.validate.name') }}" +page,
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
                         },

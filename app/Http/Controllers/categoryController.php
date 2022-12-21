@@ -55,4 +55,9 @@ class CategoryController extends ParentController
         return redirect()->route('categories.all')->with($response);
     }
 
+    public function validateName(Request $request)
+    {
+        return CategoryFacade::validateName($request['name']);
+    }
+
 }
