@@ -31,6 +31,9 @@ class ExpenseTypeSeeder extends Seeder
             [
                 'name' => 'Others',
             ],
+            [
+                'name' => 'Salary',
+            ],
         ];
         foreach ($types as $type) {
             $check = ExpenseType::where('name',$type['name'])->first();
