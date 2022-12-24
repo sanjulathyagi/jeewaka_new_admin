@@ -33,7 +33,10 @@ class ExpenseTypeSeeder extends Seeder
             ],
         ];
         foreach ($types as $type) {
-            ExpenseType::create($type);
+            $check = ExpenseType::where('name',$type['name'])->first();
+            if(!$check){
+                ExpenseType::create('$type');
+            }
         }
     }
 }
