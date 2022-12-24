@@ -46,7 +46,7 @@
                             </textarea>
                             </div>
                             <div class="col-md-12 mt-3">
-                                <button type="submit" class="btn btn-primary">Create</button>
+                                <button id="submit_btn" type="submit" class="btn btn-primary">Create</button>
 
                             </div>
 
@@ -86,10 +86,12 @@
                             if (response==1) {
                                 $('#category_name_msg').html('category already exists');
                                 $('#category_name_msg').addClass('text-danger').removeClass('text-success');
+                                $('#submit_btn').attr('disabled', true);
 
                             } else {
                                 $('#category_name_msg').html('category name is available');
                                 $('#category_name_msg').removeClass('text-danger').addClass('text-sucess');
+                                $('#submit_btn').attr('disabled', false);
 
                             }
                         }
