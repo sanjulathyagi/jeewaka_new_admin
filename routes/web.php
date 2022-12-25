@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\ProfitController;
@@ -145,4 +146,15 @@ Route::prefix('settings')->group(function () {
     Route::post('/{setting_id}/update', [SettingController::class,"update"])->name('settings.update');
     Route::get('/{setting_id}/delete', [SettingController::class,"delete"])->name('settings.delete');
     Route::get('/{setting_id}//status', [SettingController::class,"status"])->name('settings.status');
+});
+
+//categories
+Route::prefix('expenses')->group(function () {
+    Route::get('/', [ExpenseController::class,"index"])->name('expenses.all');
+    Route::get('/new', [ExpenseController::class,"new"])->name('expenses.new');
+    Route::post('/store', [ExpenseController::class,"store"])->name('expenses.store');
+    Route::get('/{expense_id}/edit', [ExpenseController::class,"edit"])->name('expenses.edit');
+    Route::post('/{expense_id}/update', [ExpenseController::class,"update"])->name('expenses.update');
+    Route::get('/{expense_id}/delete', [ExpenseController::class,"delete"])->name('expenses.delete');
+
 });
