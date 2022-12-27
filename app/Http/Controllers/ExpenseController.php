@@ -8,28 +8,28 @@ class ExpenseController extends Controller
 {
     public function index()
     {
-        $response['categories'] =CategoryFacade::all();
-        return view('pages.categories.index')->with($response);
+        $response['expenses'] =Expense::all();
+        return view('pages.expenses.index')->with($response);
     }
 
     public function new()
     {
-        $response['categories'] = CategoryFacade::all();
-        return view('pages.categories.new')->with($response);
+        $response['expenses'] = CategoryFacade::all();
+        return view('pages.expenses.new')->with($response);
     }
 
     public function store(Request $request)
     {
         CategoryFacade::store($request->all());
         $response['alert-success'] = 'Category created successfully';
-        return redirect()->route('categories.all')->with($response);
+        return redirect()->route('expenses.all')->with($response);
 
     }
 
     public function edit($category_id)
     {
         $response['category'] = CategoryFacade::get($category_id);
-        return view('pages.categories.edit')->with($response);
+        return view('pages.expenses.edit')->with($response);
     }
 
     public function delete($category_id)
