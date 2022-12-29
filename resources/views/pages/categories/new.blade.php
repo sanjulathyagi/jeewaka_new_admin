@@ -10,13 +10,13 @@
                         </a>
                     </li>
                     <li class="breadcrumb-item text-sm">
-                        <a class="opacity-5 text-white" href="{{ route('categories.all') }}">
-                            categories
+                        <a class="opacity-5 text-white" href="{{ route('expenses.all') }}">
+                            expenses
                         </a>
                     </li>
                     <li class="breadcrumb-item text-sm text-white active" aria-current="page">New</li>
                 </ol>
-                <h6 class="font-weight-bolder text-white mb-0">New Categories</h6>
+                <h6 class="font-weight-bolder text-white mb-0">New expenses</h6>
             </nav>
         </div>
     </div>
@@ -26,7 +26,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('categories.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('expenses.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row mt-3 ">
                             <div class="col-md-12">
@@ -76,7 +76,7 @@
                 var data = {
                 };
                     $.ajax{{
-                        url: "{{ route('categories.validate.name') }}" +page,
+                        url: "{{ route('expenses.validate.name') }}" +page,
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
                         },
