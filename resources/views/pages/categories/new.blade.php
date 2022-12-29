@@ -33,7 +33,7 @@
                                 <label>Name</label>
                                 <input class="form-control" type="text" value="" name="name"
                                     type="text" placeholder="eg.haircare">
-                                <small id="category_name_msg"></small>
+                                <small id="expense_name_msg"></small>
                             </div>
                             <div class="col-md-12">
                                 <label>Image</label>
@@ -71,7 +71,7 @@
                 console.error(error);
             });
 
-            $('#category_name').on('key',function(){
+            $('#expense_name').on('key',function(){
                 var name = $(this).val();
                 var data = {
                 };
@@ -84,13 +84,13 @@
                         data: data,
                         success: function(response){
                             if (response==1) {
-                                $('#category_name_msg').html('category already exists');
-                                $('#category_name_msg').addClass('text-danger').removeClass('text-success');
+                                $('#expense_name_msg').html('expense already exists');
+                                $('#expense_name_msg').addClass('text-danger').removeClass('text-success');
                                 $('#submit_btn').attr('disabled', true);
 
                             } else {
-                                $('#category_name_msg').html('category name is available');
-                                $('#category_name_msg').removeClass('text-danger').addClass('text-sucess');
+                                $('#expense_name_msg').html('expense name is available');
+                                $('#expense_name_msg').removeClass('text-danger').addClass('text-sucess');
                                 $('#submit_btn').attr('disabled', false);
 
                             }
