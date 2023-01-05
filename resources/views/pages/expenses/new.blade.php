@@ -40,7 +40,7 @@
                                 <input class="form-control dropify" name="images" type="file"
                                     accept="image/jpg, image/jpeg, image/png" required>
                             </div>
-                            {{-- <div class="col-12 col-sm-6 mt-3 ">
+                            <div class="col-12 col-sm-6 mt-3 ">
                                 <label>Introduction</label>
                                 <textarea name="description" class="form-control" id="inp_description" cols="30" rows="10">
                             </textarea>
@@ -48,7 +48,7 @@
                             <div class="col-md-12 mt-3">
                                 <button id="submit_btn" type="submit" class="btn btn-primary">Create</button>
 
-                            </div> --}}
+                            </div>
 
                         </div>
                     </form>
