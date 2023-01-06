@@ -29,7 +29,7 @@
                     <form action="{{ route('expenses.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row mt-3 ">
-                            <div class="col-md-12">
+                            {{-- <div class="col-md-12">
                                 <label>Name</label>
                                 <input class="form-control" type="text" value="" name="name"
                                     type="text" placeholder="eg.haircare">
@@ -39,7 +39,7 @@
                                 <label>Image</label>
                                 <input class="form-control dropify" name="images" type="file"
                                     accept="image/jpg, image/jpeg, image/png" required>
-                            </div>
+                            </div> --}}
                             <div class="col-12 col-sm-6 mt-3 ">
                                 <label>Introduction</label>
                                 <textarea name="description" class="form-control" id="inp_description" cols="30" rows="10">
