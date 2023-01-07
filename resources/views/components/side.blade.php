@@ -26,6 +26,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link {{ in_array($curr_url,['categories.all','categories.new','categories.edit'])?'active':'' }}" href="{{ route('categories.all') }}">
+              <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                <i class="fa-solid fa-layer-group text-sucess text-sm opacity-10"></i>
+              </div>
+              <span class="nav-link-text ms-1">Expense Management</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link {{ in_array($curr_url,['products.all','products.new','products.edit'])?'active':'' }}" href="{{ route('products.all') }}">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="fab fa-pagelines"></i>
