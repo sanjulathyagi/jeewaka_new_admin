@@ -26,7 +26,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ in_array($curr_url,['categories.all','categories.new','categories.edit'])?'active':'' }}" href="{{ route('categories.all') }}">
+            <a class="nav-link {{ in_array($curr_url,['Expenses.all','Expenses.new','Expenses.edit'])?'active':'' }}" href="{{ route('Expenses.all') }}">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="fa-solid fa-layer-group text-sucess text-sm opacity-10"></i>
               </div>
