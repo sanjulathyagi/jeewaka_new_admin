@@ -30,9 +30,9 @@
                         @csrf
                         <div class="row mt-3 ">
                             <div class="col-md-12">
-                                <label>Name</label>
+                                <label>Amount</label>
                                 <input class="form-control" type="text" value="" name="name"
-                                    type="text" placeholder="eg.haircare">
+                                    type="number" placeholder="eg.haircare">
                                 <small id="expense_name_msg"></small>
                             </div>
                             <div class="col-md-12">
