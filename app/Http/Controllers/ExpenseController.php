@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use domain\Facades\expenseFacade;
 use Illuminate\Http\Request;
 
 class ExpenseController extends Controller
@@ -14,14 +15,14 @@ class ExpenseController extends Controller
 
     public function new()
     {
-        $response['expenses'] = CategoryFacade::all();
+        $response['types'] = expenseFacade::all();
         return view('pages.expenses.new')->with($response);
     }
 
     public function store(Request $request)
     {
         CategoryFacade::store($request->all());
-        $response['alert-success'] = 'Category created successfully';
+        $response['alert-success'] = 'Expense created successfully';
         return redirect()->route('expenses.all')->with($response);
 
     }

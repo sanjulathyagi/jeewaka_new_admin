@@ -29,25 +29,21 @@
                     <table class="table-striped table-responsive table " id="expense_table">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Image</th>
+                                <th>Reason</th>
+                                <th>Amount</th>
+                                <th>Remark</th>
                                 <th style="width: 10%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($expenses as $expense)
                                 <tr>
-                                    <td>{{ $expense->name }}</td>
+                                    <td>{{ $expense->type?$expense->type->name:'N/A' }}</td>
                                     <td>
-                                        @if ($expense->images)
-                                            <img src="{{ config('image.access_path') }}/{{ $expense->images ? $expense->images->name : '' }}"
-                                                 width="100px">
-                                        @else
-                                            <img src="{{ asset('assets/img/no-image-png-2.png') }}"
-                                                 height="50px">
-                                        @endif
-
+                                       {{ $expense->amount }}
                                     </td>
+                                    <td>
+                                        {{ !!$expense->remark }}
                                     <td>
                                         <a href="{{ route('expenses.edit', $expense->id) }}"
                                             class="btn btn-outline-primary btn-sm ">

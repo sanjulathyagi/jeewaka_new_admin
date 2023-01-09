@@ -50,8 +50,8 @@
                                     accept="image/jpg, image/jpeg, image/png" required>
                             </div>
                             <div class="col-12 col-sm-6 mt-3 ">
-                                <label>Introduction</label>
-                                <textarea name="description" class="form-control" id="inp_description" cols="30" rows="10">
+                                <label>Description</label>
+                                <textarea name="remark" class="form-control" id="inp_description" cols="30" rows="10">
                             </textarea>
                             </div>
                             <div class="col-md-12 mt-3">
