@@ -31,8 +31,8 @@
                         <div class="row mt-3 ">
                             <div class="col-md-12">
                                 <label>Amount</label>
-                                <input class="form-control" type="text" value="" name="name"
-                                    type="number" placeholder="Enter Amount">
+                                <input class="form-control" type="number" name="name"
+                                     placeholder="Enter Amount" id="expense_amount">
                                 <small id="expense_name_msg"></small>
                             </div>
                             <div class="col-md-12">
