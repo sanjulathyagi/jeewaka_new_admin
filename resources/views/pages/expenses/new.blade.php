@@ -30,10 +30,19 @@
                         @csrf
                         <div class="row mt-3 ">
                             <div class="col-md-12">
+                                <label>category</label>
+                                <select name="type_id" id="type_id" class="form-control type-selector" required>
+                                    <option value=""></option>
+                                    @foreach ($typetypes as $type)
+                                        <option value="{{ $type->id }}">{{ $type->name }}</option>
+                                    @endforeach
+
+                                </select>
+                            </div>
+                            <div class="col-md-12">
                                 <label>Amount</label>
-                                <input class="form-control" type="number" name="name"
-                                     placeholder="Enter Amount" id="expense_amount">
-                                <small id="expense_name_msg"></small>
+                                <input class="form-control" type="number" name="name"placeholder="Enter Amount" id="expense_amount">
+
                             </div>
                             <div class="col-md-12">
                                 <label>Image</label>
@@ -59,44 +68,21 @@
 @endsection
 
 @push('scripts')
-    <script>
-        $('.dropify').dropify();
+<script>
+    ClassicEditor
+        .create(document.querySelector('#inp_description'))
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
 
-        ClassicEditor
-            .create(document.querySelector('#inp_description'))
-            .then(editor => {
-                console.log(editor);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-
-            $('#expense_name').on('key',function(){
-                var name = $(this).val();
-                var data = {
-                };
-                    $.ajax{{
-                        url: "{{ route('expenses.validate.name') }}" +page,
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf_token"]').attr('content')
-                        },
-                        type: 'GET',
-                        data: data,
-                        success: function(response){
-                            if (response==1) {
-                                $('#expense_name_msg').html('expense already exists');
-                                $('#expense_name_msg').addClass('text-danger').removeClass('text-success');
-                                $('#submit_btn').attr('disabled', true);
-
-                            } else {
-                                $('#expense_name_msg').html('expense name is available');
-                                $('#expense_name_msg').removeClass('text-danger').addClass('text-sucess');
-                                $('#submit_btn').attr('disabled', false);
-
-                            }
-                        }
-
-                     }};
-            });
-    </script>
+    $(document).ready(function() {
+        $('.type-selector').select2({
+            placeholder: 'Select a Type',
+            allowClear: true
+        });
+    });
+</script>
 @endpush
