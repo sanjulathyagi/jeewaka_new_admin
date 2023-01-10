@@ -44,6 +44,7 @@
                                     </td>
                                     <td>
                                         {{ !!$expense->remark }}
+                                    </td>
                                     <td>
                                         <a href="{{ route('expenses.edit', $expense->id) }}"
                                             class="btn btn-outline-primary btn-sm ">
