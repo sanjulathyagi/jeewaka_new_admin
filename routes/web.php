@@ -156,5 +156,6 @@ Route::prefix('expenses')->group(function () {
     Route::get('/{expense_id}/edit', [ExpenseController::class,"edit"])->name('expenses.edit');
     Route::post('/{expense_id}/update', [ExpenseController::class,"update"])->name('expenses.update');
     Route::get('/{expense_id}/delete', [ExpenseController::class,"delete"])->name('expenses.delete');
+    Route::get('/exports/list', [ExpenseController::class,"delete"])->name('expenses.delete');
 
 });
