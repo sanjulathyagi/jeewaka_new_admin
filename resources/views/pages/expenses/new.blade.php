@@ -44,11 +44,11 @@
                                 <input class="form-control" type="number" name="name"placeholder="Enter Amount" id="expense_amount">
 
                             </div>
-                            <div class="col-md-12">
+                            {{-- <div class="col-md-12">
                                 <label>Image</label>
                                 <input class="form-control dropify" name="images" type="file"
                                     accept="image/jpg, image/jpeg, image/png" required>
-                            </div>
+                            </div> --}}
                             <div class="col-12 col-sm-6 mt-3 ">
                                 <label>Description</label>
                                 <textarea name="remark" class="form-control" id="inp_description" cols="30" rows="10">
