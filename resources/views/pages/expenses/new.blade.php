@@ -54,10 +54,10 @@
                                 <textarea name="remark" class="form-control" id="inp_description" cols="30" rows="10">
                             </textarea>
                             </div>
-                            {{-- <div class="col-md-12 mt-3">
+                            <div class="col-md-12 mt-3">
                                 <button id="submit_btn" type="submit" class="btn btn-primary">Create</button>
 
-                            </div> --}}
+                            </div>
 
                         </div>
                     </form>
