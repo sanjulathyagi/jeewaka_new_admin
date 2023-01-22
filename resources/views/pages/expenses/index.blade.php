@@ -14,9 +14,11 @@
                 <h6 class="font-weight-bolder text-white mb-0"> All expenses</h6>
             </nav>
         </div>
-        <div class="col-lg-4 text-right d-flex flex-column justify-content-center">
+        <div class="col-lg-4 text-right justify-content-center">
             <a href="{{ route('expenses.new') }}"
-                class="btn btn-outline-white mb-0 ms-lg-auto me-lg-0 me-auto mt-lg-0 mt-2">Add New</a>
+                class="btn btn-outline-white mb-0  mt-2">Add New</a>
+            <a href="{{ route('expenses.export') }}"
+                class="btn btn-outline-white mb-0  mt-2">Export</a>
         </div>
     </div>
 @endsection
