@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExpenseExport;
+use App\Models\Expense;
 use domain\Facades\expenseFacade;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ExpenseController extends Controller
 {
@@ -21,7 +24,7 @@ class ExpenseController extends Controller
 
     public function store(Request $request)
     {
-        CategoryFacade::store($request->all());
+        ExpenseFacade::store($request->all());
         $response['alert-success'] = 'Expense created successfully';
         return redirect()->route('expenses.all')->with($response);
 
@@ -29,14 +32,14 @@ class ExpenseController extends Controller
 
     public function edit($category_id)
     {
-        $response['category'] = CategoryFacade::get($category_id);
+        $response['category'] = ExpenseFacade::get($category_id);
         return view('pages.expenses.edit')->with($response);
     }
 
     public function delete($category_id)
     {
         try {
-            CategoryFacade::delete($category_id);
+            ExpenseFacade::delete($category_id);
             $response['alert-success'] = 'Category deleted successfully';
             return redirect()->back()->with($response);
 
@@ -49,6 +52,7 @@ class ExpenseController extends Controller
 
     public function export()
     {
-        
+        return Excel::download(new ExpenseExport, 'expenses.xlsx');
+
     }
 }
