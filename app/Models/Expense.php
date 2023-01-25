@@ -9,9 +9,9 @@ class Expense extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'type_id',
-        'amount',
-        'remark',
-    ];
+    // protected $fillable = [
+    //     'type_id',
+    //     'amount',
+    //     'remark',
+    // ];
 }
