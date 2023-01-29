@@ -120,8 +120,8 @@
                                     @endif
 
                                     </a>
-                                    <img src="{{ config('image.access_path') }}/{{ $product_image->image?$product_image->image->name:'' }}"
-                                    alt="" class="img-fluid product-image">
+                                    {{-- <img src="{{ config('image.access_path') }}/{{ $product_image->image?$product_image->image->name:'' }}"
+                                    alt="" class="img-fluid product-image"> --}}
                                 </div>
                             </div>
                         </div>
