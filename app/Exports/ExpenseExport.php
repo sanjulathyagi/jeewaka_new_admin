@@ -11,6 +11,7 @@ class ExpenseExport implements FromView
 {
     public function view(): View
     {
+        $expenses = Expense::all();
         return view();
     }
 }
