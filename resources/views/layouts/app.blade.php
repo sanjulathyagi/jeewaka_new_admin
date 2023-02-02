@@ -35,7 +35,7 @@
             @include('components.footer')
         </div>
     </main>
-
+    @method('modals')
 
     @include('libraries.scripts')
 

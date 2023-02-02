@@ -17,8 +17,8 @@
         <div class="col-lg-4 text-right justify-content-center">
             <a href="{{ route('expenses.new') }}"
                 class="btn btn-outline-white mb-0  mt-2">Add New</a>
-            <a href="{{ route('expenses.export') }}" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                class="btn btn-outline-white mb-0  mt-2">Export</a>
+            <button type="button "data-bs-toggle="modal" data-bs-target="#exampleModal"
+                class="btn btn-outline-white mb-0  mt-2">Export</button>
         </div>
     </div>
 @endsection
