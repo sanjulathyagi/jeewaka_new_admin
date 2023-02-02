@@ -65,6 +65,45 @@
     </div>
 @endsection
 
+@push('modals')
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Export Expenses</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="{{ route('expenses.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row mt-3 ">
+
+                    <div class="col-md-12">
+                        <label>Start Date</label>
+                        <input class="form-control" type="date" name="start_date" placeholder="Enter start Date" id="start_date">
+                    </div>
+
+                    <div class="col-md-12">
+                        <label>End Date</label>
+                        <input class="form-control" type="date" name="End_date" placeholder="Enter End Date" id="End_date">
+
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <button id="submit_btn" type="submit" class="btn btn-primary">Export</button>
+
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+@endpush
+
+
 
 @push('scripts')
     <script>
