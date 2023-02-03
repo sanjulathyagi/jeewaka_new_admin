@@ -50,8 +50,9 @@ class ExpenseController extends Controller
 
     }
 
-    public function export()
+    public function export(ExpenseExport $expenseExport, Request $request)
     {
+        $data =  Expense::where('created_at','>=',$request->start_date)->where('created_at','>=',$request->end_date)->get();
         return Excel::download(new ExpenseExport, 'expenses.xlsx');
 
     }
