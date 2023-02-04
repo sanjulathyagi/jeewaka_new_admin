@@ -9,6 +9,8 @@ use Maatwebsite\Excel\Concerns\FromView;
 
 class ExpenseExport implements FromView
 {
+    protected $data;
+
     public function view(): View
     {
         $response['expenses'] = Expense::all();
@@ -17,6 +19,8 @@ class ExpenseExport implements FromView
 
     public function export($data)
     {
-        
+        $this->data = $data;
+        return $this;
+
     }
 }
