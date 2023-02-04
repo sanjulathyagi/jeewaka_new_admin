@@ -13,7 +13,7 @@ class ExpenseExport implements FromView
 
     public function view(): View
     {
-        $response['expenses'] = Expense::all();
+        $response['expenses'] = $this->data;
         return view('exports.expense-export')->with($response);
     }
 
