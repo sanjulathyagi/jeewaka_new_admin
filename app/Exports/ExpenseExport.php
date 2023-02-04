@@ -14,4 +14,9 @@ class ExpenseExport implements FromView
         $response['expenses'] = Expense::all();
         return view('exports.expense-export')->with($response);
     }
+
+    public function export($data)
+    {
+        
+    }
 }
