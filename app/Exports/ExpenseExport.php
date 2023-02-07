@@ -11,11 +11,11 @@ class ExpenseExport implements FromView
 {
     protected $data;
 
-    public function view(): View
-    {
-        $response['expenses'] = $this->data;
-        return view('exports.expense-export')->with($response);
-    }
+    // public function view(): View
+    // {
+    //     $response['expenses'] = $this->data;
+    //     return view('exports.expense-export')->with($response);
+    // }
 
     public function export($data)
     {
