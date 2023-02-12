@@ -125,9 +125,9 @@
                     <h6 class="text-capitalize">Appointment calendar</h6>
 
                 </div>
-                {{-- <div class="card-body p-3">
+                <div class="card-body p-3">
                     <div class="fullcalendar" data-color="primary" data-height="450"></div>
-                </div> --}}
+                </div>
             </div>
         </div>
     </div>
