@@ -126,7 +126,7 @@
 
                 </div>
                 <div class="card-body p-3">
-                    <div class="fullcalendar" data-color="primary" data-height="450"></div>
+                    {{-- <div class="fullcalendar" data-color="primary" data-height="450"></div> --}}
                 </div>
             </div>
         </div>
